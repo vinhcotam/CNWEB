@@ -9,7 +9,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/4register.css">
 
-    <title>Document</title>
+    <title>Đăng ký</title>
 </head>
 
 <body>
@@ -23,36 +23,40 @@
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Tạo tài khoản</h2>
 
-                                <form action="" method="POST">
+                                <form action="process-register.php" method="POST">
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" id="txtUser" class="form-control form-control-lg" />
-                                        <label class="form-label" for="txtUser">Nhập tên tài khoản</label>
+                                    <label class="form-label" for="txtUser">Nhập tên tài khoản</label>
+                                        <input type="text" id="txtUser" name="txtUser" class="form-control form-control-lg" />
+                                        
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="txtEmail" class="form-control form-control-lg" />
-                                        <label class="form-label" for="txtEmail">Nhập email</label>
+                                    <label class="form-label" for="txtEmail">Nhập email</label>
+                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />
+                                        
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="txtPass1"
+                                    <label class="form-label" for="txtPass1">Nhập mật khẩu</label>
+                                        <input type="password" id="txtPass1" name="txtPass1"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="txtPass1">Nhập mật khẩu</label>
+                                        
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="txtPass2"
+                                    <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
+                                        <input type="password" id="txtPass2" name="txtPass2"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
+                                        
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" name="sbmRegister"
+                                        <button type="submit" name="sbmRegister"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
                                             ký</button>
                                     </div>
 
-                                    <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản <a href="Login.html"
+                                    <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản <a href="Login.php"
                                             class="fw-bold text-body"><u>Đăng nhập tại đây</u></a></p>
 
                                 </form>

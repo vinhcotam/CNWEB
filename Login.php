@@ -26,36 +26,38 @@
                                 <form action="" method="POST">
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" id="username" class="form-control form-control-lg" />
                                         <label class="form-label" for="username">Nhập tên tài khoản</label>
+                                        <input type="text" id="username" class="form-control form-control-lg" />
+
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="usermail" class="form-control form-control-lg" />
                                         <label class="form-label" for="usermail">Nhập email</label>
+                                        <input type="email" id="usermail" class="form-control form-control-lg" />
+
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="userpass"
-                                            class="form-control form-control-lg" />
                                         <label class="form-label" for="userpass">Nhập mật khẩu</label>
+                                        <input type="password" id="userpass" class="form-control form-control-lg" />
+
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="userpass1"
-                                            class="form-control form-control-lg" />
                                         <label class="form-label" for="userpass1">Nhập lại mật khẩu</label>
+                                        <input type="password" id="userpass1" class="form-control form-control-lg" />
+
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button"
+                                        <button type="submit"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
                                             nhập</button>
                                     </div>
                                     <p class="text-center text-muted mt-5 mb-0">Bạn không nhớ mật khẩu ? <a
-                                            href="forgotpass.html" class="fw-bold text-body"><u>Nhấn vào đây</u></a>
+                                            href="forgotpass.php" class="fw-bold text-body"><u>Nhấn vào đây</u></a>
                                     </p>
                                     <p class="text-center text-muted mt-5 mb-0">Bạn chưa có tài khoản <a
-                                            href="register.html" class="fw-bold text-body"><u>Đăng ký tại đây</u></a>
+                                            href="register.php" class="fw-bold text-body"><u>Đăng ký tại đây</u></a>
                                     </p>
 
                                 </form>
