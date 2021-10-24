@@ -1,17 +1,13 @@
 <?php
-    include('conf.php');
     session_start();
     //unset($_SESSION['loginOK']);
-   // $useremail = $_POST['txtEmail'];
-   if(isset($_POST['sbmLogin'])){
-    $user_email=$_POST['txtEmail'];
+
+    $useremail = $_POST['txtEmail'];
     $password_raw = $_POST['txtPass'];
-   
-}
-    echo $user_email;
     echo $password_raw;
     //gsu mat khau nhap tren form login
-    $sql="select * from tb_user where user_email='$user_email'";
+    include('conf.php');
+    $sql="select * from tb_user where user_email='$useremail'";
     $result=mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0){
         $row=mysqli_fetch_assoc($result);
