@@ -47,7 +47,7 @@
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
                     <!-- Icon -->
-                    <a class="text-reset me-3" href="#">
+                    <a class="text-reset me-3" href="cart.php">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
 
@@ -59,20 +59,14 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#">Some news</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Another news</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Tình trạng đơn hàng</a>
                         </li>
                     </ul>
 
                     <!-- Avatar -->
-                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="./user/infor.php"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="./img/avatar-1.jpg" class="rounded-circle" height="25"
+                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25"
                             alt="" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">

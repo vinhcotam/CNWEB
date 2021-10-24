@@ -26,9 +26,9 @@ function sendEmail($recipient,$code){
         $mail->CharSet = 'UTF-8';
 
         // Cấu hình thuộc tính hiển thị của người gửi - người nhận
-        $mail->setFrom('vinhcotam04052001@gmail.com', 'Văn phòng Khoa CNTT');
+        $mail->setFrom('vinhcotam04052001@gmail.com', 'The Idea Bookstore');
 
-        $mail->addReplyTo('vinhcotam04052001@gmail.com', 'Văn phòng Khoa CNTT');
+        $mail->addReplyTo('vinhcotam04052001@gmail.com', 'The Idea Bookstore');
 
         $mail->addAddress($recipient); // Đây là địa chỉ Email người nhận > sau này sẽ là BIẾN
 
