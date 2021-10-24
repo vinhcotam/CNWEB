@@ -23,31 +23,31 @@
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Tạo tài khoản</h2>
 
-                                <form>
+                                <form action="" method="POST">
 
                                     <div class="form-outline mb-4">
-                                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1cg">Nhập tên tài khoản</label>
+                                        <input type="text" id="txtUser" class="form-control form-control-lg" />
+                                        <label class="form-label" for="txtUser">Nhập tên tài khoản</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example3cg">Nhập email</label>
+                                        <input type="email" id="txtEmail" class="form-control form-control-lg" />
+                                        <label class="form-label" for="txtEmail">Nhập email</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4cg"
+                                        <input type="password" id="txtPass1"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example4cg">Nhập mật khẩu</label>
+                                        <label class="form-label" for="txtPass1">Nhập mật khẩu</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4cdg"
+                                        <input type="password" id="txtPass2"
                                             class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example4cdg">Nhập lại mật khẩu</label>
+                                        <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button"
+                                        <button type="button" name="sbmRegister"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
                                             ký</button>
                                     </div>

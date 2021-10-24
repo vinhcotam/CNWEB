@@ -34,10 +34,10 @@
                             <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Đăng nhập</a>
+                            <a class="nav-link" href="Login.php">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Đăng ký</a>
+                            <a class="nav-link" href="register.php">Đăng ký</a>
                         </li>
                     </ul>
                     <!-- Left links -->
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </nav>
-        <!-- end Navbar -->
+        <!-- endNavbar -->
     </header>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
