@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -83,6 +83,7 @@
         <!-- endNavbar -->
     </header>
 
+    <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -114,6 +115,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!-- End Carousel -->
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">

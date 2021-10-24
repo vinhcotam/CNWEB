@@ -8,59 +8,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/4register.css">
-
     <title>Đăng ký</title>
 </head>
 
 <body>
     <section class="vh-100 bg-image"
-        style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg') ;">
+        style="background-image: url('https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wppj?ver=6044') ;">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                        <div class="card" style="border-radius: 15px;">
+                        <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Tạo tài khoản</h2>
 
-                                <form action="process-register.php" method="POST">
+                                <form action="" method="POST">
 
-                                    <div class="form-outline mb-4">
-                                    <label class="form-label" for="txtUser">Nhập tên tài khoản</label>
-                                        <input type="text" id="txtUser" name="txtUser" class="form-control form-control-lg" />
-                                        
+                                    <div class="form-outline mb-2">
+                                        <input type="text" id="txtUser" class="form-control form-control-lg" />
+                                        <label class="form-label" for="txtUser">Nhập tên tài khoản</label>
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                    <label class="form-label" for="txtEmail">Nhập email</label>
-                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />
-                                        
+                                    <div class="form-outline mb-2">
+                                        <input type="email" id="txtEmail" class="form-control form-control-lg" />
+                                        <label class="form-label" for="txtEmail">Nhập email</label>
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                    <label class="form-label" for="txtPass1">Nhập mật khẩu</label>
-                                        <input type="password" id="txtPass1" name="txtPass1"
+                                    <div class="form-outline mb-2">
+                                        <input type="password" id="txtPass1"
                                             class="form-control form-control-lg" />
-                                        
+                                        <label class="form-label" for="txtPass1">Nhập mật khẩu</label>
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                    <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
-                                        <input type="password" id="txtPass2" name="txtPass2"
+                                    <div class="form-outline mb-2">
+                                        <input type="password" id="txtPass2"
                                             class="form-control form-control-lg" />
-                                        
+                                        <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" name="sbmRegister"
+                                        <button type="button" name="sbmRegister"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
                                             ký</button>
                                     </div>
-
-                                    <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản <a href="Login.php"
-                                            class="fw-bold text-body"><u>Đăng nhập tại đây</u></a></p>
-
+                                    <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản <a href="Login.html"
+                                            class="fw-bold text-body"><u>Đăng nhập tại đây</u></a>
+                                    </p>
                                 </form>
-
                             </div>
                         </div>
                     </div>

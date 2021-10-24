@@ -22,7 +22,7 @@
     else{
         $pass_hash=password_hash($pass1,PASSWORD_DEFAULT);
         $code=md5(uniqid(rand(),true));
-        $sql2="Insert into tb_user (user_name,user_email,user_pass,user_code) values ('$user','$email','$pass_hash','$code')";
+        $sql2="Insert into tb_user (user_name,user_email,user_pass) values ('$user','$email','$pass_hash')";
         $result2=mysqli_query($conn,$sql2);
         if($result2>=1){
             //sendEmail('vinhcotam04052001@gmail.com',$code);
