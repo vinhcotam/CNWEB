@@ -23,33 +23,20 @@
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Đăng nhập</h2>
 
-                                <form action="" method="POST">
-
+                                <form action="checkpass.php" method="POST">
                                     <div class="form-outline mb-4">
-                                        <label class="form-label" for="username">Nhập tên tài khoản</label>
-                                        <input type="text" id="username" class="form-control form-control-lg" />
+                                        <label class="form-label" for="txtEmail">Nhập email</label>
+                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />
 
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label" for="usermail">Nhập email</label>
-                                        <input type="email" id="usermail" class="form-control form-control-lg" />
-
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="userpass">Nhập mật khẩu</label>
-                                        <input type="password" id="userpass" class="form-control form-control-lg" />
-
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="userpass1">Nhập lại mật khẩu</label>
-                                        <input type="password" id="userpass1" class="form-control form-control-lg" />
+                                        <label class="form-label" for="txtPass">Nhập mật khẩu</label>
+                                        <input type="password" id="txtPass" name="txtPass" class="form-control form-control-lg" />
 
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit"
+                                        <button type="submit" name="sbmLogin"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
                                             nhập</button>
                                     </div>
