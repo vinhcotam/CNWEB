@@ -6,8 +6,6 @@
         $pass2  = $_POST['txtPass2'];
         $code = $_POST['code'];
     }
-
-
     // 1. Kết nối DB Server
     
    // echo $conn;
@@ -18,7 +16,7 @@
     // 3. XỬ lý kết quả
     $pass_hash=password_hash($pass1,PASSWORD_DEFAULT);
     if(mysqli_num_rows($result) > 0){
-        $sql_2 = "update tb_user set user_pass = '$pass_hash' WHERE user_email='$email' and user_code='$code'";
+        $sql_2 = "update tb_user set user_pass = '$pass_hash',user_code='$code' WHERE user_email='$email' ";
         $result_2 = mysqli_query($conn,$sql_2);
 
         if($result_2 > 0){
