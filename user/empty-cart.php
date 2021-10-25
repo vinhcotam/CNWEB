@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="css/empty-cart.css">
     <title>Giỏ Hàng</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,8 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="./img/Logo.png" height="70" alt="Logo"
-                            loading="lazy" />
+                        <img src="../img/Logo.png" height="70" alt="Logo" loading="lazy" />
                     </a>
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -65,8 +66,7 @@
                     <!-- Avatar -->
                     <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="./user/infor.php"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25"
-                            alt="" loading="lazy" />
+                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
@@ -82,23 +82,25 @@
         <!-- endNavbar -->
     </header>
 
-<section class="empty-cart page-wrapper">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="block text-center">
-                <i class="fas fa-shopping-cart"></i>
-          	    <h2 class="text-center">Giỏ hàng của bạn không có gì.</h2>
-          	    <p>Cảm ơn quý khách đã tin tưởng dịch vụ của chúng tôi</p>
-                <a href="home.php" class="btn btn-main mt-20">Quay lại trang chủ</a>
+    <section class="empty-cart page-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="block text-center">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h2 class="text-center">Giỏ hàng của bạn không có gì.</h2>
+                        <p>Cảm ơn quý khách đã tin tưởng dịch vụ của chúng tôi</p>
+                        <a href="home.php" class="btn btn-main mt-20">Quay lại trang chủ</a>
+                    </div>
+                </div>
             </div>
-        </div>
+    </section>
     </div>
-</section>
 
 
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
@@ -221,8 +223,11 @@
     </footer>
     <!-- Footer -->
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+</script>
+
 </html>
