@@ -2,7 +2,7 @@
     session_start(); //Dịch vụ bảo vệ
     if(isset($_SESSION['loginOK'])){
         unset($_SESSION['loginOK']);
-        header("Location:./Login.php"); 
+        header("Location:Login.php"); 
     }
 ?>
  

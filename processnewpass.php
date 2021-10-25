@@ -1,10 +1,10 @@
 <?php
     include('conf.php');
-    if(isset('sbNew')){
-        $email = $_GET['email'];
-        $code  = $_GET['code'];
+    if(isset($_POST['sbNew'])){
+        $email = $_POST['email'];
         $pass1 = $_POST['txtPass1'];
         $pass2  = $_POST['txtPass2'];
+        $code = $_POST['code'];
     }
 
 

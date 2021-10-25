@@ -27,9 +27,9 @@ include("conf.php");
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Đặt mật khẩu</h2>
-
                                 <form action="processnewpass.php" method="POST">
-
+                                    <input name="email" value="<?php echo $email; ?>" hidden="hidden">
+                                    <input name="code" value="<?php echo $code; ?>" hidden="hidden">
                                     <div class="form-outline mb-2">
                                     <div class="form-outline mb-2">
                                     <label class="form-label" for="txtPass1">Nhập mật khẩu mới</label>
