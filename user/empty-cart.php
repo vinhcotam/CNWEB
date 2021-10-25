@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="./img/Logo.png" height="70" alt="Logo"
+                        <img src="../img/Logo.png" height="70" alt="Logo"
                             loading="lazy" />
                     </a>
                     <!-- Left links -->
