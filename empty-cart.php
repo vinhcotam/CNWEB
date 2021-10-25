@@ -85,7 +85,7 @@
 <section class="empty-cart page-wrapper">
     <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md col-md-offset-3">
             <div class="block text-center">
                 <i class="fas fa-shopping-cart"></i>
           	    <h2 class="text-center">Giỏ hàng của bạn không có gì.</h2>
