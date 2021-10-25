@@ -19,7 +19,7 @@
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
-                                <h2 class="text-uppercase text-center mb-5">Đăng nhập</h2>
+                                <h2 class="text-uppercase text-center mb-5">Quên mật khẩu</h2>
 
                                 <form action="processforgot.php" method="POST">
 
