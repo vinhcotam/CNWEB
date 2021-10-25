@@ -6,7 +6,7 @@
     if(isset($_POST['sbForgot'])){
         $email=$_POST['txtEmail'];
     }
-    $sql="select* from tb_user where user_email='$email'";
+    $sql="select * from tb_user where user_email='$email'";
     //echo $sql;
     $result=mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)<=0){
