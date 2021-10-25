@@ -26,12 +26,8 @@ a
     font-weight: 200;
     border-radius: 0;
 }
-.empty-cart
+.container
 {
     left: 0;
     right: 0;
-}
-.page-wrapper 
-{
-    margin: 70px 0;
 }
