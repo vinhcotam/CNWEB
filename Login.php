@@ -22,39 +22,29 @@
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Đăng nhập</h2>
 
-                                <form action="" method="POST">
+                                <form action="checkpass.php" method="POST">
 
                                     <div class="form-outline mb-2">
-                                        <input type="text" id="username" class="form-control form-control-lg" />
-                                        <label class="form-label" for="username">Nhập tên tài khoản</label>
+                                    <label class="form-label" for="txtEmail">Nhập email</label>
+                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />
+                                        
                                     </div>
 
                                     <div class="form-outline mb-2">
-                                        <input type="email" id="usermail" class="form-control form-control-lg" />
-                                        <label class="form-label" for="usermail">Nhập email</label>
-                                    </div>
-
-                                    <div class="form-outline mb-2">
-                                        <input type="password" id="userpass"
-                                            class="form-control form-control-lg" />
-                                        <label class="form-label" for="userpass">Nhập mật khẩu</label>
-                                    </div>
-
-                                    <div class="form-outline mb-2">
-                                        <input type="password" id="userpass1"
-                                            class="form-control form-control-lg" />
-                                        <label class="form-label" for="userpass1">Nhập lại mật khẩu</label>
+                                    <label class="form-label" for="txtPass">Nhập mật khẩu</label>
+                                        <input type="password" id="txtPass" name="txtPass"  class="form-control form-control-lg" />
+                                        
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button"
+                                        <button type="submit" name="sbLogin"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
                                             nhập</button>
                                     </div>
                                     <p class="text-center text-muted mt-4 mb-0">Bạn không nhớ mật khẩu ? <a
-                                            href="forgotpass.html" class="fw-bold text-body"><u>Nhấn vào đây</u></a>
+                                            href="forgotpass.php" class="fw-bold text-body"><u>Nhấn vào đây</u></a>
                                     </p>
                                     <p class="text-center text-muted mt-4 mb-0">Bạn chưa có tài khoản <a
-                                            href="register.html" class="fw-bold text-body"><u>Đăng ký tại đây</u></a>
+                                            href="register.php" class="fw-bold text-body"><u>Đăng ký tại đây</u></a>
                                     </p>
                                 </form>
 

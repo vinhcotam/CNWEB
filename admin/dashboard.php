@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['loginOK'])){
+        header("Location:./home.php"); 
+    }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -91,8 +97,8 @@
                                     style="margin-top: 15px;" />
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <button class="btn btn-danger">Đăng xuất</button>
+                                <a class="nav-link" href="../logout.php">
+                                    <button class="btn btn-danger" type="submit">Đăng xuất</button>
                                 </a>
                             </li>
                         </ul>
