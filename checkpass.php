@@ -15,10 +15,10 @@
         $level=$row['level_user'];
         echo $password_hash;
         //ktra co khop mk k
-        if(password_verify($password_raw,$password_hash) and $level==true){
+        if(password_verify($password_raw,$password_hash) && $level==true){
             $_SESSION['loginOK'] = $useremail;
             header('Location:admin/dashboard.php');
-        }if (password_verify($password_raw,$password_hash) and $level==false){
+        }if (password_verify($password_raw,$password_hash) && $level==false){
             $_SESSION['loginOK'] = $useremail;
             header("Location:../home.php"); 
         }
