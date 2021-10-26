@@ -3,24 +3,9 @@
     if(!isset($_SESSION['loginOK'])){
         header("Location:../home.php"); 
     }
+    include('header.php');
 ?>
-<!doctype html>
-<html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="../css/admin.css">
-    <title>IDEA Bookshop - Admin</title>
-</head>
-
-<body>
     <div class="container-fluid">
         <div class="row" style="min-height:1000px;">
             <div class="col-md-4">
@@ -148,8 +133,8 @@
                         <div class="col-md-6" style="margin-bottom: 15px;">
                             <div class="card py-2 shadow border-danger">
                                 <div class="card-body">
-                                    <h5 class="card-title">Lượt truy cập
-                                    <i class="fas fa-mouse-pointer fa-3x" style="float:right;"></i></h5>
+                                    <h5 class="card-title">Số sách còn khả dụng
+                                    <i class="fas fa-book fa-3x" style="float:right;"></i></h5>
                                     <p class="card-text">???</p>
 
                                 </div>
@@ -169,11 +154,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-
-</body>
-
-</html>
+<?php
+    include('footer.php');
+    ?>
