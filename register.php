@@ -93,7 +93,6 @@
         
 
                                         ?>
-                                        <span></span>
                                     </div>
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" name="sbmRegister" id="sbmRegister"
