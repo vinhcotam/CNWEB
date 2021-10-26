@@ -13,7 +13,7 @@
 
     if($user=='' || $email=='' ||$pass1 =='' ||$pass2==''){
         echo "Hãy nhập đầy đủ thông tin";
-    }else{
+    }else if($pass1==$pass2){
         //ktra email hoac user da ton tai chua
         $sql="select* from tb_user where user_email='$email'or user_name='$user'";
         //echo $sql;
@@ -32,6 +32,8 @@
             }
         }
 //neu chua thi moi luu vao csdl va gui email
+    }else{
+        echo "mật khẩu không trùng";
     }
     
 
