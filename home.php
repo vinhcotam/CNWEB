@@ -47,7 +47,7 @@
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
                     <!-- Icon -->
-                    <a class="text-reset me-3" href="cart.php">
+                    <a class="text-reset me-3" href="../empty-cart.php">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
 
@@ -116,7 +116,9 @@
         </button>
     </div>
     <!-- End Carousel -->
-
+    <main>
+        
+    </main>
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Social media -->
