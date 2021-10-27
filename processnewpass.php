@@ -18,12 +18,11 @@
     
     $result=mysqli_query($conn, $sql);
     if(mysqli_num_rows($result)>0){
-        while($row=mysqli_fetch_assoc($result)
         $sql_2 = "update tb_user set user_pass = '$pass_hash',user_code='$code' WHERE user_email='$email' ";
         $result_2 = mysqli_query($conn,$sql_2);
 
         if($result_2 > 0){
-            echo 'Đã đổi được mật khẩu';
+            echo "<span>Đã đổi được mật khẩu</span>";
         }
     }else{
        echo 'Không đổi được mật khẩu';

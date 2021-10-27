@@ -40,6 +40,7 @@ include("conf.php");
                                         <input type="password" id="txtPass2" name="txtPass2"  class="form-control form-control-lg" />
                                         
                                     </div>
+                                    
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" name="sbNew"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đặt lại mật khẩu</button>
