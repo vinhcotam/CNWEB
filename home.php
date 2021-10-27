@@ -36,7 +36,7 @@
                             <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Login.php">Đăng nhập</a>
+                            <a class="nav-link" href="login.php">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="register.php">Đăng ký</a>

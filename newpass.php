@@ -1,9 +1,4 @@
-<?php
-include("conf.php");
-    $email = $_GET['email'];
-    $code  = $_GET['code'];
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
