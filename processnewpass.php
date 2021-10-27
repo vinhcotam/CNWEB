@@ -15,7 +15,10 @@
    //echo $result;
     // 3. XỬ lý kết quả
     $pass_hash=password_hash($pass1,PASSWORD_DEFAULT);
-    if(mysqli_num_rows($result) > 0){
+    
+    $result=mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result)>0){
+        while($row=mysqli_fetch_assoc($result)
         $sql_2 = "update tb_user set user_pass = '$pass_hash',user_code='$code' WHERE user_email='$email' ";
         $result_2 = mysqli_query($conn,$sql_2);
 
@@ -26,5 +29,3 @@
        echo 'Không đổi được mật khẩu';
     }
 ?>
-
-
