@@ -143,7 +143,6 @@
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Thể Loại
                     </a>
-
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#">Cổ Tích</a></li>
                         <li><a class="dropdown-item" href="#">Kinh Dị</a></li>
@@ -160,7 +159,6 @@
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Giá Min
                     </a>
-
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#">0 VNĐ</a></li>
                         <li><a class="dropdown-item" href="#">10.000 VNĐ</a></li>
@@ -177,7 +175,6 @@
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Giá Max
                     </a>
-
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#">1.000.000 VNĐ</a></li>
                         <li><a class="dropdown-item" href="#">500.000 VNĐ</a></li>
