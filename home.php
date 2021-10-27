@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="../css/homepage.css">
     <title>IDEA Bookstore</title>
 </head>
 
@@ -47,7 +49,7 @@
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
                     <!-- Icon -->
-                    <a class="text-reset me-3" href="../empty-cart.php">
+                    <a class="text-reset me-3" href="cart.php">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
 
@@ -116,9 +118,76 @@
         </button>
     </div>
     <!-- End Carousel -->
-    <main>
-        
-    </main>
+
+    <!-- Search Box -->
+    <section class="products section bg-gray mt-5">
+	<div class="container">
+		<div class="row">
+			<div class="title text-center">
+				<h2>Tìm Kiếm Sách</h2>
+			</div>
+            <div class="searchbox mt-2">
+                <div class="input-group rounded">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                    <span class="input-group-text border-0" id="search-addon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container p-4">
+            <div class="row align-items-start">
+                <!-- The Loai -->
+                <div class="col-md-4 text-center">
+                    <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Thể Loại
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Cổ Tích</a></li>
+                        <li><a class="dropdown-item" href="#">Kinh Dị</a></li>
+                        <li><a class="dropdown-item" href="#">Light Novel</a></li>
+                        <li><a class="dropdown-item" href="#">Tiểu Thuyết</a></li>
+                        <li><a class="dropdown-item" href="#">Trinh Thám</a></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Giá Min -->
+                <div class="col-md-4 text-center">
+                    <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Giá Min
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">0 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">10.000 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">20.000 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">30.000 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">40.000 VNĐ</a></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Giá Max -->
+                <div class="col-md-4 text-center">
+                    <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Giá Max
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">1.000.000 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">500.000 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">200.000 VNĐ</a></li>
+                        <li><a class="dropdown-item" href="#">100.000 VNĐ</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    </section>
+
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Social media -->
