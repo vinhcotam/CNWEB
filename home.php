@@ -124,7 +124,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
-				<h2>Tìm kiếm</h2>
+				<h2>Tìm Kiếm Sách</h2>
 			</div>
             <div class="searchbox mt-2">
                 <div class="input-group rounded">
@@ -183,7 +183,6 @@
                     </ul>
                     </div>
                 </div>
-
             </div>
         </div>
 	</div>
