@@ -18,12 +18,6 @@ include 'conf.php';
     <title>Chi tiết sản phẩm</title>
   </head>
   <body>
-  <?php
-    include 'conf.php';
-        $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id='$book_id '";
-        $result=mysqli_query($conn,$sql);
-        while($row=mysqli_fetch_array($result)){
-    ?>
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -94,51 +88,59 @@ include 'conf.php';
         <!-- endNavbar -->
     </header>
 
-<div class="single-product">
-  <div class="container-fluid">
+<!-- Breadcrumb -->
+<div>
+  <div class="container-expand-lg">
     <div class="d-flex align-items-start bg-light p-3">
       <div class="col-md-6">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="home.php" style="color: black; text-decoration: none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;">Search</a></li>
             <li class="breadcrumb-item active" style="color: black; text-decoration: none;" aria-current="page">Hoàng Tử Bé</li>
           </ol>
         </nav>
       </div>
       <div class="col-md-6">
+        <nav aria-label="breadcrumb" style="float: right;">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;"><i class="fas fa-arrow-left" style="color: black;"></i> Preview </a></li>
             <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;"> Next <i class="fas fa-arrow-right" style="color: black;"></i></a></li>
           </ol>
+        </nav>
       </div>
     </div>
   </div>
 </div>
+<!-- endBreadcrumb -->
+
+<!-- Book -->
+<div>
+  <div class="container-expand-lg">
+    <div class="d-flex align-items-start bg-light p-3">
+      <div class="col-md-6">
+          <div class="thumbnail img-center">
+            <img src="./book-img/Co-tich-1.jpg" style="width: 40%; float:left;">
+          <div class="caption">
+      </div>
+      <div class="col-md-6" style="float: right; ">
+        <h3>Hoàng Tử Bé</h3>
+        <p class="cost">Giá: 200</p>
+        <p class="author">Tác giả: Antoine de Saint-Exupéry</p>
+        <p class="category">Thể loại: Cổ tích</p>
+        <p class="intro">Giới thiệu: Truyện thiếu nhi khá hay</p>
+        <p class="btn-cost">      
+        <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>        
+        <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
+        </p>
+      </div>
+    </div>  
+  </div>
+</div>
+<!-- EndBook -->
 
 
-
-    <div class="col-md">
-        <div class="thumbnail img-center">
-            <img src="<?php echo $row['img_url'] ?>" alt=""  height="300px">
-            <div class="caption">
-        
-                <h3><?php echo $row['book_name'] ?></h3>
-                <p class="cost">Giá:<?php echo $row['book_price'] ?></p>
-                <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
-                <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
-                <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
-                <p class="btn-cost">      
-                <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>        
-                    <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <?php
-        }
-    ?>
-
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
