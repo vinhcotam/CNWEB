@@ -2,15 +2,19 @@
 // $category = $_GET('category');
 include('../conf.php');
 $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
+if(isset($category))
 if($category!='default'){
     $sql .= " and book_category like '$category'";
 }
+if(isset($bookname))
 if($bookname != ''){
     $sql .= " and book_name = '$bookname'";
 }
+if(isset($author))
 if($author !=''){
     $sql .= " and book_author = '$author'";
 }
+
 $result=mysqli_query($conn, $sql);
 if(mysqli_num_rows($result)>0){
     while($row=mysqli_fetch_assoc($result)){
@@ -31,4 +35,5 @@ if(mysqli_num_rows($result)>0){
     </div></td>';
     }
 }
+
 ?>

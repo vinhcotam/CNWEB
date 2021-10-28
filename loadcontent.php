@@ -2,18 +2,23 @@
     include 'conf.php';
     
     $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
+    if(isset($category))
     if($category!='default'){
         $sql .= " and book_category like '$category'";
     }
+    if(isset($bookname))
     if($bookname != ''){
         $sql .= " and book_name = '$bookname'";
     }
+    if(isset($author))
     if($author !=''){
         $sql .= " and book_author = '$author'";
     }
+    if(isset($minprice))
     if($minprice !=''){
         $sql .= " and book_price > $minprice";
     }
+    if(isset($maxprice))
     if($maxprice !=''){
         $sql .= " and book_price < $maxprice";
     }
