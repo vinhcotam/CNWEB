@@ -39,6 +39,7 @@
                                         <input type="password" id="txtPass2" name="txtPass2"  class="form-control form-control-lg" />
                                         
                                     </div>
+                 
                                     <p id="warning" style="color:red;"></p>
                                     <div class="d-flex justify-content-center">
                                         <button id="sbNew" name="sbNew" type="sumbit"

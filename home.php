@@ -143,29 +143,39 @@
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Thể Loại
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Cổ Tích</a></li>
-                        <li><a class="dropdown-item" href="#">Kinh Dị</a></li>
-                        <li><a class="dropdown-item" href="#">Light Novel</a></li>
-                        <li><a class="dropdown-item" href="#">Tiểu Thuyết</a></li>
-                        <li><a class="dropdown-item" href="#">Trinh Thám</a></li>
-                    </ul>
+                    <?php
+                        include 'conf.php';
+                        $sql="select distinct book_category from tb_book";
+                        $result=mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($result)){
+                            echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
+                            while($row=mysqli_fetch_assoc($result)){                              
+                                echo '<li><a class="dropdown-item" href="#">'.$row['book_category'].'</a></li>';                           
+                            }
+                        }
+
+                    ?>
                     </div>
                 </div>
 
-                <!-- Giá Min -->
+                <!-- Tác giả -->
                 <div class="col-md-4 text-center">
                     <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Giá Min
+                        Tác giả
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">0 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">10.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">20.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">30.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">40.000 VNĐ</a></li>
-                    </ul>
+                    <?php
+                        include 'conf.php';
+                        $sql="select distinct book_author from tb_book";
+                        $result=mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($result)){
+                            echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
+                            while($row=mysqli_fetch_assoc($result)){                              
+                                echo '<li><a class="dropdown-item" href="#">'.$row['book_author'].'</a></li>';                           
+                            }
+                        }
+
+                    ?>
                     </div>
                 </div>
 
@@ -187,6 +197,32 @@
         </div>
 	</div>
     </section>
+    <p class="lead text-center text-muted">Sách mới cập nhật</p>
+    <div class="row">
+    <?php
+    include 'conf.php';
+        $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id";
+        $result=mysqli_query($conn,$sql);
+        while($row=mysqli_fetch_array($result)){
+    ?>
+    <div class="col-md-4">
+        <div class="thumbnail img-center">
+            <img src="<?php echo $row['img_url'] ?>" alt=""  height="300px">
+            <div class="caption">
+        
+                <h3><?php echo $row['book_name'] ?></h3>
+                <p class="cost">Giá:<?php echo $row['book_price'] ?></p>
+                <p class="btn-cost">
+                    <a href="book.php?book_id=<?php echo $row['book_id'] ?>" class="btn btn-success" role="button">Chi tiết</a>
+                    <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php
+        }
+    ?>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
