@@ -31,39 +31,40 @@
                                     <div class="form-outline mb-2">
                                         <div class="form-outline mb-2">
                                             <label class="form-label" for="pass">Nhập mật khẩu mới</label>
-                                            <input onchange='checkpass();' type="password" id="pass" name="pass"
+                                            <input onkeyup='checkpass();' type="password" id="pass" name="pass"
                                                 class="form-control form-control-lg" />
 
                                         </div>
                                         <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
-                                        <input onchange='checkpass();' type="password" id="txtPass2" name="txtPass2"
+                                        <input onkeyup='checkpass();' type="password" id="txtPass2" name="txtPass2"
                                             class="form-control form-control-lg" />
-
                                     </div>
-
-                                    <p id="warning" style="color:red;"></p>
-                                    <div class="d-flex justify-content-center">
-                                        <button id="sbNew" name="sbNew" type="sumbit" disabled
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đặt lại
-                                            mật khẩu</button>
-                                    </div>
-                                    <script>
-                                    function checkpass() {
-                                        if (document.getElementById('pass').value ==
-                                            document.getElementById('txtPass2').value) {
-                                            document.getElementById('sbNew').disabled = false;
-                                        } else {
-                                            document.getElementById('sbNew').disabled = true;
-                                        }
-                                    }
-                                    </script>
-                                </form>
 
                             </div>
+
+                            <p id="warning" style="color:red;"></p>
+                            <div class="d-flex justify-content-center">
+                                <button id="sbNew" name="sbNew" type="sumbit" disabled
+                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đặt lại
+                                    mật khẩu</button>
+                            </div>
+                            <script>
+                            function checkpass() {
+                                if (document.getElementById('pass').value ==
+                                    document.getElementById('txtPass2').value) {
+                                    document.getElementById('sbNew').disabled = false;
+                                } else {
+                                    document.getElementById('sbNew').disabled = true;
+                                }
+                            }
+                            </script>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- <script src="js/check.js"></script> -->

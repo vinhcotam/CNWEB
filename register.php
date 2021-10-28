@@ -39,20 +39,17 @@
                                     </div>
 
                                     <div class="form-outline mb-2">
-                                        <label class="form-label" for="txtPass1">Nhập mật khẩu</label>
-                                        <input type="password" id="txtPass1" name="txtPass1"
+                                        <label class="form-label" for="pass">Nhập mật khẩu mới</label>
+                                        <input onkeyup='checkpass();' type="password" id="txtPass1" name="txtPass1"
                                             class="form-control form-control-lg" />
 
                                     </div>
-
-                                    <div class="form-outline mb-2">
-                                        <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
-                                        <input type="password" id="txtPass2" name="txtPass2"
-                                            class="form-control form-control-lg" />
-
-                                    </div>
-                                    <div>
-                                        <?php
+                                    <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
+                                    <input onkeyup='checkpass();' type="password" id="txtPass2" name="txtPass2"
+                                        class="form-control form-control-lg" />
+                            </div>
+                            <div>
+                                <?php
                                             //ktra tinh hop le du lieu
                                             //nhan du lieu tu form
                                             include('send.php');
@@ -90,22 +87,32 @@
                                             }                                           
                                             
                                         ?>
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" name="sbmRegister" id="sbmRegister"
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
-                                            ký</button>
-                                    </div>
-
-                                    <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản <a href="Login.php"
-                                            class="fw-bold text-body"><u>Đăng nhập tại đây</u></a>
-                                    </p>
-                                </form>
                             </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" name="sbmRegister" id="sbmRegister" disabled
+                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng
+                                    ký</button>
+                            </div>
+                            <script>
+                            function checkpass() {
+                                if (document.getElementById('txtPass1').value ==
+                                    document.getElementById('txtPass2').value) {
+                                    document.getElementById('sbmRegister').disabled = false;
+                                } else {
+                                    document.getElementById('sbmRegister').disabled = true;
+                                }
+                            }
+                            </script>
+
+                            <p class="text-center text-muted mt-5 mb-0">Bạn đã có tài khoản <a href="Login.php"
+                                    class="fw-bold text-body"><u>Đăng nhập tại đây</u></a>
+                            </p>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
