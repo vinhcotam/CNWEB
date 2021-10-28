@@ -1,21 +1,35 @@
 <?php
 include('header.php');
-if(isset($_GET['category']))
-$category=$_GET['category'];
-else $category='mm';
+if(isset($_GET['category'])){
+    $bookname='';
+    $category=$_GET['category'];
+    $author='';
+}
+else {
+    $category='default';
+    if(isset($_POST['Ibookname']))
+    $bookname=$_POST['Ibookname'];
+    if(isset($_POST['Ibookauthor']))
+    $author = $_POST['Ibookauthor'];
+}
 ?>
 <div class="container-fluid">
     <div class="row">
         <h3 class="text-center">Tìm Sách</h3>
         <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Nhật ký trong tù">
-                <label for="floatingInput">Tên sách</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="Nguyễn Ái Quốc">
-                <label for="floatingInput">Tên tác giả</label>
-            </div>
+            <form action="listbook.php" method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="Ibookname" name="Ibookname" placeholder="Nhật ký trong tù">
+                    <label for="floatingInput">Tên sách</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="Ibookauthor" name = "Ibookauthor" placeholder="Nguyễn Ái Quốc">
+                    <label for="floatingInput">Tên tác giả</label>
+                </div>
+                <div class="form-floating">
+                    <button class="btn btn-primary" type="sumbit">Tìm kiếm</button>
+                </div>
+            </form>
         </div>
         <div class="col-md-6">
             <div class="dropdown">
@@ -73,10 +87,10 @@ else $category='mm';
 </div>
 
 <script>
-    function filter1(category){
-        $category=category;
-        load('loadtable.php');
-    }
+function filter1(category) {
+    $category = category;
+    load('loadtable.php');
+}
 </script>
 <?php
 include('footer.php');
