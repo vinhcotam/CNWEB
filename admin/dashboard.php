@@ -24,18 +24,18 @@
                                 <svg class="bi me-2" width="16" height="16">
                                     <use xlink:href="#home"></use>
                                 </svg>
-                                Danh mục
+                                Thông tin cá nhân
                             </a>
                         </li>
                         <li class="nav-item">
                             <hr>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="listbook.php" class="nav-link text-white">
                                 <svg class="bi me-2" width="16" height="16">
                                     <use xlink:href="#speedometer2"></use>
                                 </svg>
-                                Thành phần
+                                Quản lý sách
                             </a>
                         </li>
                         <li class="nav-item">
@@ -46,7 +46,7 @@
                                 <svg class="bi me-2" width="16" height="16">
                                     <use xlink:href="#table"></use>
                                 </svg>
-                                Tùy chỉnh
+                                Đơn hàng
                             </a>
                         </li>
                         <li>
@@ -89,67 +89,7 @@
                         </ul>
 
                     </div>
-                    <div class="row">
-                        <hr>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul class="nav justify-content-start">
-                                <li class="nav-item">
-                                    <h2>Danh mục</h2>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="nav justify-content-end">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <button class="btn btn-success">Tạo bản báo cáo</button>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6" style="margin-bottom: 15px;">
-                            <div class="card py-2 shadow border-primary">
-                                <div class="card-body">
-                                    <h5 class="card-title">Doanh thu(tháng)
-                                    <i class="fab fa-bitcoin fa-3x" style="float:right;"></i></h5>
-                                    <p class="card-text">???</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" style="margin-bottom: 15px;">
-                            <div class="card py-2 shadow border-success">
-                                <div class="card-body">
-                                    <h5 class="card-title">Doanh thu(quý)
-                                    <i class="fas fa-coins fa-3x" style="float:right;"></i></h5>
-                                    <p class="card-text">???</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" style="margin-bottom: 15px;">
-                            <div class="card py-2 shadow border-danger">
-                                <div class="card-body">
-                                    <h5 class="card-title">Số sách còn khả dụng
-                                    <i class="fas fa-book fa-3x" style="float:right;"></i></h5>
-                                    <p class="card-text">???</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" style="margin-bottom: 15px;">
-                            <div class="card py-2 shadow border-warning">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sách bán trong tháng
-                                    <i class="fas fa-shopping-cart fa-3x" style="float:right;"></i></h5>
-                                    <p class="card-text">???</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

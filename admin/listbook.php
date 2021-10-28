@@ -61,6 +61,13 @@ else {
                     </li>
                 </ul>
             </div>
+            <p>
+                
+            </p>
+            <div class="col-md-6">
+            <a href="dashboard.php"><button class="btn btn-success w-100">Quay về dashboard</button></a>
+            </div>
+            
         </div>
     </div>
     <table class="table">
