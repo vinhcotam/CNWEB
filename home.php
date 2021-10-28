@@ -9,7 +9,6 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="../css/homepage.css">
     <title>IDEA Bookstore</title>
 </head>
 
@@ -27,8 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="./img/Logo.png" height="70" alt="Logo"
-                            loading="lazy" />
+                        <img src="./img/Logo.png" height="70" alt="Logo" loading="lazy" />
                     </a>
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -36,7 +34,7 @@
                             <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Login.php">Đăng nhập</a>
+                            <a class="nav-link" href="login.php">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="register.php">Đăng ký</a>
@@ -68,8 +66,7 @@
                     <!-- Avatar -->
                     <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="./user/infor.php"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25"
-                            alt="" loading="lazy" />
+                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
@@ -121,72 +118,70 @@
 
     <!-- Search Box -->
     <section class="products section bg-gray mt-5">
-	<div class="container">
-		<div class="row">
-			<div class="title text-center">
-				<h2>Tìm Kiếm Sách</h2>
-			</div>
-            <div class="searchbox mt-2">
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
-                    </span>
+        <div class="container">
+            <form action="home.php" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="Ibookname" name="Ibookname">
+                            <label for="floatingInput">Tên sách</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="Ibookauthor" name="Ibookauthor">
+                            <label for="floatingInput">Tên tác giả</label>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="Iminprice" name="Iminprice" value ="0">
+                            <label for="floatingInput">Giá tối thiểu</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="Imaxprice" name="Imaxprice" value ="2147483647">
+                            <label for="floatingInput">Giá tối đa</label>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="form-floating">
+                        <button class="btn btn-primary" type="sumbit">Tìm kiếm</button>
+                    </div>
+                </div>
+            </form>
+            <div class="container p-4">
+                <div class="row align-items-start">
+                    <!-- The Loai -->
+                    <div class="col-md-6">
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Thể Loại
+                            </a>
+                            <?php
+                        include 'conf.php';
+                        $sql="select distinct book_category from tb_book";
+                        $result=mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($result)){
+                            echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
+                            while($row=mysqli_fetch_assoc($result)){                              
+                                echo '<li><a class="dropdown-item" href="home.php?category='.$row['book_category'].'">'.$row['book_category'].'</a></li>';                           
+                            }
+                        }
+
+                    ?>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="container p-4">
-            <div class="row align-items-start">
-                <!-- The Loai -->
-                <div class="col-md-4 text-center">
-                    <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Thể Loại
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Cổ Tích</a></li>
-                        <li><a class="dropdown-item" href="#">Kinh Dị</a></li>
-                        <li><a class="dropdown-item" href="#">Light Novel</a></li>
-                        <li><a class="dropdown-item" href="#">Tiểu Thuyết</a></li>
-                        <li><a class="dropdown-item" href="#">Trinh Thám</a></li>
-                    </ul>
-                    </div>
-                </div>
-
-                <!-- Giá Min -->
-                <div class="col-md-4 text-center">
-                    <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Giá Min
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">0 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">10.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">20.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">30.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">40.000 VNĐ</a></li>
-                    </ul>
-                    </div>
-                </div>
-
-                <!-- Giá Max -->
-                <div class="col-md-4 text-center">
-                    <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Giá Max
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">1.000.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">500.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">200.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">100.000 VNĐ</a></li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</div>
     </section>
+    <p class="lead text-center text-muted">Sách mới cập nhật</p>
+    <div class="row">
+        <?php include('loadcontent.php') ?>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
