@@ -129,9 +129,8 @@
             <div class="searchbox mt-2">
                 <div class="input-group rounded">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
-                    </span>
+
+                    <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
@@ -150,7 +149,7 @@
                         if(mysqli_num_rows($result)){
                             echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
                             while($row=mysqli_fetch_assoc($result)){                              
-                                echo '<li><a class="dropdown-item" href="#">'.$row['book_category'].'</a></li>';                           
+                                echo '<li><a class="dropdown-item" href="home.php?category='.$row['book_category'].'">'.$row['book_category'].'</a></li>';                           
                             }
                         }
 
@@ -171,7 +170,7 @@
                         if(mysqli_num_rows($result)){
                             echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
                             while($row=mysqli_fetch_assoc($result)){                              
-                                echo '<li><a class="dropdown-item" href="#">'.$row['book_author'].'</a></li>';                           
+                                echo '<li><a class="dropdown-item" href="home.php?author='.$row['book_author'].'">'.$row['book_author'].'</a></li>';                           
                             }
                         }
 
