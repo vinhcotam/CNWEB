@@ -128,7 +128,7 @@ include 'conf.php';
         <p class="cost">Giá: 200</p>
         <p class="author">Tác giả: Antoine de Saint-Exupéry</p>
         <p class="category">Thể loại: Cổ tích</p>
-        <p class="intro">Giới thiệu: Truyện thiếu nhi khá hay</p>
+        <p class="intro">Giới thiệu: Truyện thiếu nhi khá hay ho</p>
         <p class="btn-cost">      
         <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>        
         <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
