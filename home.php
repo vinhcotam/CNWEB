@@ -9,7 +9,6 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="../css/homepage.css">
     <title>IDEA Bookstore</title>
 </head>
 
@@ -27,8 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="./img/Logo.png" height="70" alt="Logo"
-                            loading="lazy" />
+                        <img src="./img/Logo.png" height="70" alt="Logo" loading="lazy" />
                     </a>
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -68,8 +66,7 @@
                     <!-- Avatar -->
                     <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="./user/infor.php"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25"
-                            alt="" loading="lazy" />
+                        <img src="./img/avatar1.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
@@ -121,28 +118,48 @@
 
     <!-- Search Box -->
     <section class="products section bg-gray mt-5">
-	<div class="container">
-		<div class="row">
-			<div class="title text-center">
-				<h2>Tìm Kiếm Sách</h2>
-			</div>
-            <div class="searchbox mt-2">
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-
-                    <button type="submit"><i class="fas fa-search"></i></button>
+        <div class="container">
+            <form action="home.php" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="Ibookname" name="Ibookname">
+                            <label for="floatingInput">Tên sách</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="Ibookauthor" name="Ibookauthor">
+                            <label for="floatingInput">Tên tác giả</label>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="Iminprice" name="Iminprice" value ="0">
+                            <label for="floatingInput">Giá tối thiểu</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="Imaxprice" name="Imaxprice" value ="2147483647">
+                            <label for="floatingInput">Giá tối đa</label>
+                        </div>
+                        <br>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="container p-4">
-            <div class="row align-items-start">
-                <!-- The Loai -->
-                <div class="col-md-4 text-center">
-                    <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Thể Loại
-                    </a>
-                    <?php
+                <div class="row text-center">
+                    <div class="form-floating">
+                        <button class="btn btn-primary" type="sumbit">Tìm kiếm</button>
+                    </div>
+                </div>
+            </form>
+            <div class="container p-4">
+                <div class="row align-items-start">
+                    <!-- The Loai -->
+                    <div class="col-md-6">
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Thể Loại
+                            </a>
+                            <?php
                         include 'conf.php';
                         $sql="select distinct book_category from tb_book";
                         $result=mysqli_query($conn,$sql);
@@ -154,73 +171,16 @@
                         }
 
                     ?>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Tác giả -->
-                <div class="col-md-4 text-center">
-                    <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Tác giả
-                    </a>
-                    <?php
-                        include 'conf.php';
-                        $sql="select distinct book_author from tb_book";
-                        $result=mysqli_query($conn,$sql);
-                        if(mysqli_num_rows($result)){
-                            echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
-                            while($row=mysqli_fetch_assoc($result)){                              
-                                echo '<li><a class="dropdown-item" href="home.php?author='.$row['book_author'].'">'.$row['book_author'].'</a></li>';                           
-                            }
-                        }
-
-                    ?>
-                    </div>
-                </div>
-
-                <!-- Giá Max -->
-                <div class="col-md-4 text-center">
-                    <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Giá Max
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">1.000.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">500.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">200.000 VNĐ</a></li>
-                        <li><a class="dropdown-item" href="#">100.000 VNĐ</a></li>
-                    </ul>
-                    </div>
                 </div>
             </div>
         </div>
-	</div>
     </section>
     <p class="lead text-center text-muted">Sách mới cập nhật</p>
     <div class="row">
-    <?php
-    include 'conf.php';
-        $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id";
-        $result=mysqli_query($conn,$sql);
-        while($row=mysqli_fetch_array($result)){
-    ?>
-    <div class="col-md">
-        <div class="thumbnail img-center">
-            <img src="<?php echo $row['img_url'] ?>" alt=""  height="300px">
-            <div class="caption">
-        
-                <h3><?php echo $row['book_name'] ?></h3>
-                <p class="cost">Giá:<?php echo $row['book_price'] ?></p>
-                <p class="btn-cost">
-                    <a href="book.php?book_id=<?php echo $row['book_id'] ?>" class="btn btn-success" role="button">Chi tiết</a>
-                    <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <?php
-        }
-    ?>
+        <?php include('loadcontent.php') ?>
     </div>
 
     <!-- Footer -->
