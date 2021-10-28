@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +21,7 @@
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Đặt mật khẩu</h2>
-                                <form action="processnewpass.php" method="post"> 
+                                <form action="processnewpass.php" method="post">
                                     <?php
                                         $email=$_GET['email'];
                                         $code=$_GET['code'];
@@ -30,21 +29,34 @@
                                     <input name="email" id="email" value="<?php echo $email; ?>" hidden="hidden">
                                     <input name="code" id="code" value="<?php echo $code; ?>" hidden="hidden">
                                     <div class="form-outline mb-2">
-                                    <div class="form-outline mb-2">
-                                    <label class="form-label" for="pass">Nhập mật khẩu mới</label>
-                                        <input type="password" id="pass" name="pass"  class="form-control form-control-lg" />
-                                        
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="pass">Nhập mật khẩu mới</label>
+                                            <input onchange='checkpass();' type="password" id="pass" name="pass"
+                                                class="form-control form-control-lg" />
+
+                                        </div>
+                                        <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
+                                        <input onchange='checkpass();' type="password" id="txtPass2" name="txtPass2"
+                                            class="form-control form-control-lg" />
+
                                     </div>
-                                    <label class="form-label" for="txtPass2">Nhập lại mật khẩu</label>
-                                        <input type="password" id="txtPass2" name="txtPass2"  class="form-control form-control-lg" />
-                                        
-                                    </div>
-                 
+
                                     <p id="warning" style="color:red;"></p>
                                     <div class="d-flex justify-content-center">
-                                        <button id="sbNew" name="sbNew" type="sumbit"
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đặt lại mật khẩu</button>
+                                        <button id="sbNew" name="sbNew" type="sumbit" disabled
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đặt lại
+                                            mật khẩu</button>
                                     </div>
+                                    <script>
+                                    function checkpass() {
+                                        if (document.getElementById('pass').value ==
+                                            document.getElementById('txtPass2').value) {
+                                            document.getElementById('sbNew').disabled = false;
+                                        } else {
+                                            document.getElementById('sbNew').disabled = true;
+                                        }
+                                    }
+                                    </script>
                                 </form>
 
                             </div>
@@ -56,8 +68,7 @@
     </section>
     <!-- <script src="js/check.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>
