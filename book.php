@@ -5,19 +5,22 @@ include 'conf.php';
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Chi tiết sản phẩm</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -88,182 +91,196 @@ include 'conf.php';
         <!-- endNavbar -->
     </header>
 
-<!-- Breadcrumb -->
-<div>
-  <div class="container-expand-lg">
-    <div class="d-flex align-items-start bg-light p-3">
-      <div class="col-md-6">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="home.php" style="color: black; text-decoration: none;">Home</a></li>
-            <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;">Search</a></li>
-            <li class="breadcrumb-item active" style="color: black; text-decoration: none;" aria-current="page">Hoàng Tử Bé</li>
-          </ol>
-        </nav>
-      </div>
-      <div class="col-md-6">
-        <nav aria-label="breadcrumb" style="float: right;">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;"><i class="fas fa-arrow-left" style="color: black;"></i> Preview </a></li>
-            <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;"> Next <i class="fas fa-arrow-right" style="color: black;"></i></a></li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- endBreadcrumb -->
-
-<!-- Book -->
-<div>
-  <div class="container-expand-lg">
-    <div class="d-flex align-items-start bg-light p-3">
-      <div class="col-md-6">
-          <div class="thumbnail img-center">
-            <img src="./book-img/Co-tich-1.jpg" style="width: 40%; float:left;">
-          <div class="caption">
-      </div>
-      <div class="col-md-6" style="float: right; ">
-        <h3>Hoàng Tử Bé</h3>
-        <p class="cost">Giá: 200</p>
-        <p class="author">Tác giả: Antoine de Saint-Exupéry</p>
-        <p class="category">Thể loại: Cổ tích</p>
-        <p class="intro">Giới thiệu: Truyện thiếu nhi khá hay ho</p>
-        <p class="btn-cost">      
-        <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>        
-        <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
-        </p>
-      </div>
-    </div>  
-  </div>
-</div>
-<!-- EndBook -->
-
-
-<!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Get connected with us on social networks:</span>
-            </div>
-            <!-- Left -->
-
-            <!-- Right -->
-            <div>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>IDEA Bookstore
-                        </h6>
-                        <p>
-                            175 Tây Sơn, Quận Đống Đa, Hà Nội -
-                            Công Ty Cổ Phần Phát Hành Sách IDEA Group -
-                            IDEA Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận
-                            hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống IDEA trên toàn quốc.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Dịch vụ
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset">Điều khoản sử dụng</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Chính sách bảo mật</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Giới thiệu</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Hệ thống trung tâm - nhà sách</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Hỗ trợ
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset">Chính sách đổi trả - Hoàn tiền</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Phương thức vận chuyển</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Phương thức thanh toán và xuất Hóa đơn</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Contact
-                        </h6>
-                        <p><i class="fas fa-home me-3"></i> Hà Nội, HN 10000, VN</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            info@ideagroup.net
-                        </p>
-                        <p><i class="fas fa-phone me-3"></i> + 84 xxx xxx xxx</p>
-                        <p><i class="fas fa-print me-3"></i> + 84 xxx xxx xxy</p>
-                    </div>
-                    <!-- Grid column -->
+    <!-- Breadcrumb -->
+    <div>
+        <div class="container-expand-lg">
+            <div class="d-flex align-items-start bg-light p-3">
+                <div class="col-md-6">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="home.php"
+                                    style="color: black; text-decoration: none;">Home</a></li>
+                            <li class="breadcrumb-item"><a href=""
+                                    style="color: black; text-decoration: none;">Search</a></li>
+                            <li class="breadcrumb-item active" style="color: black; text-decoration: none;"
+                                aria-current="page">Hoàng Tử Bé</li>
+                        </ol>
+                    </nav>
                 </div>
-                <!-- Grid row -->
+                <div class="col-md-6">
+                    <nav aria-label="breadcrumb" style="float: right;">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;"><i
+                                        class="fas fa-arrow-left" style="color: black;"></i> Preview </a></li>
+                            <li class="breadcrumb-item"><a href="" style="color: black; text-decoration: none;"> Next <i
+                                        class="fas fa-arrow-right" style="color: black;"></i></a></li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
-        </section>
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="">IDEA GROUP</a>
         </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
+    </div>
+    <!-- endBreadcrumb -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
+    <!-- Book -->
+    <div>
+        <div class="container-expand-lg">
+            <div class="row" >
+                <div class="d-flex align-items-start bg-light p-3">
+                    <div class="col-md-12">
+                        <div class="thumbnail img-center">
+                            <div class="col-md"style="float: left; padding-left:35%" >
+                                <img src="./book-img/Co-tich-1.jpg" style="max-height: 250px;min-height: 100px; float:left;">
+                            </div>
+                            <div class="caption">
+                            </div>
+                            <div class="col-md"  style="float: right; padding-right:35%">
+                                <h3>Hoàng Tử Bé</h3>
+                                <p class="cost">Giá: 200</p>
+                                <p class="author">Tác giả: Antoine de Saint-Exupéry</p>
+                                <p class="category">Thể loại: Cổ tích</p>
+                                <p class="intro">Giới thiệu: Truyện thiếu nhi khá hay ho</p>
+                                <p class="btn-cost">
+                                    <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
+                                    <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- EndBook -->
+
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>IDEA Bookstore
+                            </h6>
+                            <p>
+                                175 Tây Sơn, Quận Đống Đa, Hà Nội -
+                                Công Ty Cổ Phần Phát Hành Sách IDEA Group -
+                                IDEA Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua
+                                và nhận
+                                hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống IDEA trên toàn quốc.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Dịch vụ
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Điều khoản sử dụng</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Chính sách bảo mật</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Giới thiệu</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Hệ thống trung tâm - nhà sách</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Hỗ trợ
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Chính sách đổi trả - Hoàn tiền</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Phương thức vận chuyển</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Phương thức thanh toán và xuất Hóa đơn</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <p><i class="fas fa-home me-3"></i> Hà Nội, HN 10000, VN</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                info@ideagroup.net
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i> + 84 xxx xxx xxx</p>
+                            <p><i class="fas fa-print me-3"></i> + 84 xxx xxx xxy</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2021 Copyright:
+                <a class="text-reset fw-bold" href="">IDEA GROUP</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+</body>
+
 </html>
