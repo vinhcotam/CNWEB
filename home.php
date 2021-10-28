@@ -205,7 +205,7 @@
         $result=mysqli_query($conn,$sql);
         while($row=mysqli_fetch_array($result)){
     ?>
-    <div class="col-md-4">
+    <div class="col-md">
         <div class="thumbnail img-center">
             <img src="<?php echo $row['img_url'] ?>" alt=""  height="300px">
             <div class="caption">
