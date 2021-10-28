@@ -179,11 +179,11 @@
             </div>
         </div>
     </section>
-    <p class="lead text-center text-muted">Sách mới cập nhật</p>
+    <p class="lead text-center text-muted">Danh sách sản phẩm</p>
     <div class="row">
         <?php
             if(isset($_GET['category'])){
-                $category=$_POST['category'];
+                $category=$_GET['category'];
                 $bookname='';
                 $author='';
             }
