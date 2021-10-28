@@ -1,5 +1,8 @@
 <?php
 include('header.php');
+if(isset($_GET['category']))
+$category=$_GET['category'];
+else $category='mm';
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -16,17 +19,32 @@ include('header.php');
         </div>
         <div class="col-md-6">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                <button class="btn btn-secondary dropdown-toggle w-50" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    Thể loại
+                    Lọc theo thể loại
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Tiểu thuyết</a></li>
-                    <li><a class="dropdown-item" href="#">Trinh thám</a></li>
-                    <li><a class="dropdown-item" href="#">Kinh dị</a></li>
-                    <li><a class="dropdown-item" href="#">Lãng mạn</a></li>
-                    <li><a class="dropdown-item" href="#">Truyện ngắn</a></li>
-                    <li><a class="dropdown-item" href="#">Light Novel</a></li>
+                <ul class="dropdown-menu w-50" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Tiểu thuyết">Tiểu thuyết</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Trinh thám">Trinh thám</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Kinh dị">Kinh dị</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Lãng mạn">Lãng mạn</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Truyện ngắn">Truyện ngắn</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Light Novel">Light Novel</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="listbook.php?category=Cổ tích">Cổ tích</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -34,44 +52,32 @@ include('header.php');
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Tên sách</th>
-                <th scope="col">Giá sách</th>
-                <th scope="col">Số lượng còn</th>
-                <th scope="col">Thể loại</th>
-                <th scope="col">Tác giả</th>
-                <th scope="col">Mô tả</th>
-                <th scope="col">Ảnh bìa</th>
-                <th scope="col">Tùy chọn</th>
+                <th class="col">ID</th>
+                <th class="col-2">Tên sách</th>
+                <th class="col">Giá sách</th>
+                <th class="col">Số lượng còn</th>
+                <th class="col">Thể loại</th>
+                <th class="col">Tác giả</th>
+                <th class="col-4">Mô tả</th>
+                <th class="col">Ảnh bìa</th>
+                <th class="col">Tùy chọn</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="bodytable">
             <?php
-                include('../conf.php');
-                $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
-                $result=mysqli_query($conn, $sql);
-                if(mysqli_num_rows($result)>0){
-                    while($row=mysqli_fetch_assoc($result)){
-                    echo '<tr>';
-                    echo '<th scope="row">'.$row["book_id"].'</th>';
-                    echo '<td>'.$row["book_name"].'</td>';
-                    echo '<td>'.$row["book_price"].'</td>';
-                    echo '<td>'.$row["book_quantity"].'</td>';
-                    echo '<td>'.$row["book_category"].'</td>';
-                    echo '<td>'.$row["book_author"].'</td>';
-                    echo '<td>'.$row["book_intro"].'</td>';
-                    echo '<td><img src="../'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150"></td>';
-                    echo '
-                    <td><a href=editbook.php?id='.$row["book_id"].'><button class="btn btn-success">Sửa</button></a>
-                    <a href=deletebook.php?id='.$row["book_id"].'><button class="btn btn-danger">Xóa sách</button></a><td>';
-                    }
-                }
-                ?>
-
+            include('loadtable.php')
+            ?>
         </tbody>
     </table>
 
 </div>
+
+<script>
+    function filter1(category){
+        $category=category;
+        load('loadtable.php');
+    }
+</script>
 <?php
 include('footer.php');
 ?>
