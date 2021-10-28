@@ -119,6 +119,7 @@
     <!-- Search Box -->
     <section class="products section bg-gray mt-5">
         <div class="container">
+            
             <form action="home.php" method="post">
                 <div class="row">
                     <div class="col-md-6">
@@ -134,11 +135,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="Iminprice" name="Iminprice" value ="0">
+                            <input type="number" class="form-control" id="Iminprice" name="Iminprice" value="0">
                             <label for="floatingInput">Giá tối thiểu</label>
                         </div>
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="Imaxprice" name="Imaxprice" value ="2147483647">
+                            <input type="number" class="form-control" id="Imaxprice" name="Imaxprice" value="8000">
                             <label for="floatingInput">Giá tối đa</label>
                         </div>
                         <br>
@@ -160,7 +161,7 @@
                                 Thể Loại
                             </a>
                             <?php
-                        include 'conf.php';
+                        include ('conf.php');
                         $sql="select distinct book_category from tb_book";
                         $result=mysqli_query($conn,$sql);
                         if(mysqli_num_rows($result)){
@@ -180,7 +181,29 @@
     </section>
     <p class="lead text-center text-muted">Sách mới cập nhật</p>
     <div class="row">
-        <?php include('loadcontent.php') ?>
+        <?php
+            if(isset($_GET['category'])){
+                $category=$_POST['category'];
+                $bookname='';
+                $author='';
+            }
+            else{
+                $category="default";
+                if(isset($_POST['Ibookname'])){
+                    $bookname=$_POST['Ibookname'];
+                }
+                if(isset($_POST['Ibookauthor'])){
+                    $author=$_POST['Ibookauthor'];
+                }
+            }
+            if(isset($_POST['Iminprice'])){
+                $minprice=$_POST['Iminprice'];
+            }
+            if(isset($_POST['Imaxprice'])){
+                $maxprice=$_POST['Imaxprice'];
+            }
+            include('loadcontent.php') 
+        ?>
     </div>
 
     <!-- Footer -->
