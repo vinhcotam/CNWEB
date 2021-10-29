@@ -8,7 +8,7 @@
     }
     if(isset($bookname))
     if($bookname != ''){
-        $sql .= " and book_name = '$bookname'";
+        $sql .= " and book_name like '%$bookname%'";
     }
     if(isset($author))
     if($author !=''){

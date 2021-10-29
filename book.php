@@ -140,7 +140,7 @@ include 'conf.php';
 
                             <div class="col-md-6" style="float: right; padding-right:8%;">
                                 <h3><?php echo $row['book_name'] ?></h3>
-                                <p class="cost">Giá:<?php echo $row['book_price'] ?></p>
+                                <h6 class="cost" style="color:red;">Giá:<?php echo $row['book_price'] ?></h6>
                                 <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
                                 <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
                                 <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
