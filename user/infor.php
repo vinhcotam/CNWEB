@@ -2,6 +2,9 @@
     session_start();
     if(!isset($_SESSION['loginOK'])){
         header("Location:../login.php"); 
+        $useremail = $_POST[$_SESSION['loginOK']];
+         //$useremail=$_SESSION['loginOK'];
+        // echo $useremail;
     }
 
 ?>
@@ -18,7 +21,10 @@ A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themefores
 Licensed under MIT
 -->
 <?php
-
+  /*  include('../conf.php');
+    $sql="select * from tb_user where user_email='$useremail'";
+    $result=mysqli_query($conn,$sql);
+    if($row=mysqli_num_rows($result)){*/
 ?>
 <div class="container">
     <div class="row profile">
@@ -26,7 +32,7 @@ Licensed under MIT
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img src="../img/avatar1.jpg" class="img-responsive" alt="">
+					<img src="../img/avatar2.jpg" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -70,6 +76,9 @@ Licensed under MIT
 		</div>
 	</div>
 </div>
+<?php
+//}
+?>
 <center>
 <strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">Idead Bookstore</a></strong>
 </center>

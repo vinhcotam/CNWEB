@@ -133,7 +133,7 @@ include 'conf.php';
         <div class="container-expand-lg">
             <div class="row">
                 <div class="d-flex align-items-start bg-light p-3">
-                    <div class="col-md">
+                    <div class="col-md" style="text-align: left;">
                         <div class="thumbnail img-center">
 
                             <img src="<?php echo $row['img_url'] ?>" alt="" height="300px" style="padding-left:30%;">
