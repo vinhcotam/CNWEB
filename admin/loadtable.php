@@ -31,7 +31,7 @@ if(mysqli_num_rows($result)>0){
     <td><div class="row">
     <a href=editbook.php?id='.$row["book_id"].'><button class="btn btn-success w-100">Sửa</button></a>
     <br><br>
-    <a href=deletebook.php?id='.$row["book_id"].'><button class="btn btn-danger w-100">Xóa sách</button></a>
+     <a href=deletebook.php?id='.$row["book_id"].'><button class="btn btn-danger w-100">Xóa sách</button></a>
     </div></td>';
     }
 }
