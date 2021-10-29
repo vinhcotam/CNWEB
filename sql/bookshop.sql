@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 28, 2021 lúc 05:41 AM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 04:30 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -32,7 +32,7 @@ CREATE TABLE `tb_book` (
   `book_name` varchar(255) DEFAULT NULL,
   `book_price` float DEFAULT NULL,
   `book_quantity` int(11) NOT NULL,
-  `book_category` varchar(255) DEFAULT NULL,
+  `book_category` varchar(10000) DEFAULT NULL,
   `book_author` varchar(255) DEFAULT NULL,
   `book_intro` varchar(255) NOT NULL,
   `img_id` varchar(255) NOT NULL
@@ -43,10 +43,15 @@ CREATE TABLE `tb_book` (
 --
 
 INSERT INTO `tb_book` (`book_id`, `book_name`, `book_price`, `book_quantity`, `book_category`, `book_author`, `book_intro`, `img_id`) VALUES
-(1, 'Hoàng tử bé', 200, 120, 'Cổ tích', 'Không rõ', 'Không có mô tả', 'cotich1'),
+(1, 'Hoàng tử bé', 200, 120, 'Cổ tích', 'Antoine De Saint-Expéry', 'được xuất bản năm 1943, là tiểu thuyết nổi tiếng nhất của nhà văn và phi công Pháp Antoine de Saint-Exupéry. Ông đã thuê ngôi biệt thự The Bevin House ở Asharoken, Long Island, New York trong khi viết tác phẩm này.', 'cotich1'),
 (2, 'GOTH', 200, 120, 'Kinh dị', 'OTSUCHI', 'Không có mô tả', 'kinhdi1'),
 (3, 'Kafka bên bờ biển', 150, 100, 'Tiểu thuyết', 'Haruki Murakami', 'Kafka bên bờ biển (海辺のカフカ Umibe no Kafuka?) là tiểu thuyết của nhà văn người Nhật Bản Haruki Murakami (2002). Sự xuất sắc của tác phẩm này đã giúp ông được trao giải thưởng văn học Franz Kafka năm 2006[1]. Bản dịch tiếng Việt của Dương Tường được hoàn tất', 'tieuthuyet1'),
-(4, 'Phía sau nghi can', 500, 340, 'Trinh thám', 'Higashino Keigo', 'Phía sau nghi can X (容疑者Xの献身 Yōgisha Ekkusu no Kenshin) là một bộ tiểu thuyết được viết vào năm 2005 bởi Higashino Keigo, cuốn thứ ba trong seri Thám tử Galileo (tức nhân vật Manabu Yukawa) và đây là tác phẩm thành công nhất của ông từ trước đến nay. Cuốn', 'trinhtham1');
+(4, 'Phía sau nghi can', 500, 340, 'Trinh thám', 'Higashino Keigo', 'Phía sau nghi can X (容疑者Xの献身 Yōgisha Ekkusu no Kenshin) là một bộ tiểu thuyết được viết vào năm 2005 bởi Higashino Keigo, cuốn thứ ba trong seri Thám tử Galileo (tức nhân vật Manabu Yukawa) và đây là tác phẩm thành công nhất của ông từ trước đến nay. Cuốn', 'trinhtham1'),
+(5, 'Truyện cổ Andersen', 650, 1000, 'Cổ tích', 'Hans Christian Andersen', 'Truyện Cổ Andersen đi theo tuổi thơ mỗi đứa trẻ, cùng lớn lên với mỗi người, và ở mỗi độ tuổi khác nhau, khi đọc Andersen lại có một cảm nhận mới mẻ, tinh tế hơn, sâu sắc hơn.', 'cotich2'),
+(6, 'Ác quỷ nam kinh', 1000, 1500, 'Kinh dị', 'Mo Hyder', 'Thảm sát Nam Kinh, cũng thường được gọi là vụ \"Cưỡng hiếp Nam Kinh\", là một tội ác chiến tranh do quân đội Nhật Bản tiến hành bên trong và xung quanh Nam Kinh, Trung Quốc sau khi thành phố này rơi vào tay Quân đội Thiên hoàng Nhật Bản ngày 13 tháng 12 năm', 'kinhdi2'),
+(7, 'Lắng nghe gió hát', 150, 120, 'Tiểu thuyết', 'Haruki Murakami', 'Lắng nghe gió hát (風の歌を聴け Kaze no uta wo kike?) là tên tiểu thuyết đầu tay phát hành năm 1979 của nhà văn Nhật Bản Murakami Haruki. Lắng nghe gió hát xuất hiện lần đầu trong số tháng 6 năm 1979 của Gunzo (một trong những tạp chí văn học có ảnh hưởng nhất ', 'tieuthuyet2'),
+(8, 'Grimgar tập 1', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lighnovel1'),
+(9, 'Grimgar tập 2', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lightnovel2');
 
 -- --------------------------------------------------------
 
@@ -68,7 +73,12 @@ INSERT INTO `tb_img` (`img_id`, `img_url`, `img_alt`) VALUES
 ('cotich1', 'book-img/Co-tich-1.jpg', 'Hoàng tử bé'),
 ('kinhdi1', 'book-img/Kinh-di-3.jpg', 'GOTH'),
 ('tieuthuyet1', 'book-img/Tieu-thuyet-1.jfif', 'Kafka bên bờ biển'),
-('trinhtham1', 'book-img/Trinh-tham-1.jpg', 'Phía sau nghi can');
+('trinhtham1', 'book-img/Trinh-tham-1.jpg', 'Phía sau nghi can'),
+('cotich2', 'book-img/Co-tich-2.jpg', 'Truyện cổ Andersen'),
+('kinhdi2', 'book-img/Kinh-di-4.jpg', 'Ác quỷ nam kinh'),
+('tieuthuyet2', 'book-img/Tieu-thuyet-2.jpg', 'Lắng nghe gió hát'),
+('lighnovel1', 'book-img/Light-novel-1.jpg', 'Grimgar'),
+('lightnovel2', 'book-img/Light-novel-2.jpg', 'Grimar');
 
 -- --------------------------------------------------------
 
@@ -132,7 +142,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT cho bảng `tb_book`
 --
 ALTER TABLE `tb_book`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
