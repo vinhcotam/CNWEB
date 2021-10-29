@@ -20,7 +20,7 @@
             header('Location:admin/dashboard.php');
         }if (password_verify($password_raw,$password_hash) && $level==false){
             $_SESSION['loginOK'] = $useremail;
-            header("Location:user/infor.php"); 
+            header("Location:home.php?username=$useremail"); 
         }
         else{
             echo 'mat khau khong khop';

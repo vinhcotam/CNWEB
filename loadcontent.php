@@ -22,6 +22,10 @@
     if($maxprice !=''){
         $sql .= " and book_price < $maxprice";
     }
+    if(isset($page)){
+        $tmp = 8*($page-1);
+        $sql .= " limit $tmp,8";
+    }
 
     $result=mysqli_query($conn,$sql);
     while($row=mysqli_fetch_array($result)){
