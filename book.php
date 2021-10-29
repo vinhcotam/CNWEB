@@ -132,24 +132,32 @@ include 'conf.php';
     <div>
 
         <div class="container-expand-lg">
-            <div class="d-flex align-items-start bg-light p-3">
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <img src="<?php echo $row['img_url'] ?>" width=400 alt="">
-                    </div>
-                    <div class="col-md-8">
-                        <h3><?php echo $row['book_name'] ?></h3>
-                        <h6 class="cost" style="color:red;">Giá:<?php echo $row['book_price'] ?></h6>
-                        <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
-                        <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
-                        <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
-                        <p class="btn-cost">
-                            <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
-                            <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
-                        </p>
+            <!--<form action="user/cart.php?id=<?php //echo $book_id; ?>" method="POST">-->
+                <div class="d-flex align-items-start bg-light p-3">
+                    <div class="row">
+
+                        <div class="col-md-4 text-center">
+                            <img src="<?php echo $row['img_url'] ?>" width=400 alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h3><?php echo $row['book_name'] ?></h3>
+                            <input name="text" id="text" value="<?php echo $book_id; ?>" hidden="hidden">
+                            <h6 class="cost" style="color:red;">Giá:<?php echo $row['book_price'] ?></h6>
+                            <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
+                            <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
+                            <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
+                            <p class="btn-cost">
+                                <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
+                            <div>
+                                <input type="number" class="product-quantity" name="quantity" value="1" size="2" />
+                                <a href="user/cart.php?id=<?php echo $book_id; ?>" class="btn btn-success" role="button">Thêm vào giỏ hàng</a>
+                            </div>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
-            </div>
+            <!--</form>-->
             <?php
         }
     ?>
