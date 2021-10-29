@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if(isset($_POST['cart'])){
+		$book_id = $_POST['bookid'];
+	}
+	include '../conf.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
