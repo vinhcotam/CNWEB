@@ -159,7 +159,7 @@ include 'conf.php';
                                     })
                                     
                                 </script>
-                                <!-- <a href="user/cart.php?id=<?php echo $book_id;?> &qty= " class="btn btn-success" role="button">Thêm vào giỏ hàng</a> -->
+                                <!-- <a href="user/cart.php?id= &qty= " class="btn btn-success" role="button">Thêm vào giỏ hàng</a> -->
                             </div>
                             </p>
                         </div>
