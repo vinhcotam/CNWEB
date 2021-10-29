@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 11:10 AM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 05:12 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -48,7 +48,7 @@ INSERT INTO `tb_book` (`book_id`, `book_name`, `book_price`, `book_quantity`, `b
 (4, 'Phía sau nghi can', 500, 340, 'Trinh thám', 'Higashino Keigo', 'Phía sau nghi can X (容疑者Xの献身 Yōgisha Ekkusu no Kenshin) là một bộ tiểu thuyết được viết vào năm 2005 bởi Higashino Keigo, cuốn thứ ba trong seri Thám tử Galileo (tức nhân vật Manabu Yukawa) và đây là tác phẩm thành công nhất của ông từ trước đến nay. Cuốn', 'trinhtham1'),
 (5, 'Truyện cổ Andersen', 650, 1000, 'Cổ tích', 'Hans Christian Andersen', 'Truyện Cổ Andersen đi theo tuổi thơ mỗi đứa trẻ, cùng lớn lên với mỗi người, và ở mỗi độ tuổi khác nhau, khi đọc Andersen lại có một cảm nhận mới mẻ, tinh tế hơn, sâu sắc hơn.', 'cotich2'),
 (6, 'Ác quỷ nam kinh', 1000, 1500, 'Kinh dị', 'Mo Hyder', 'Thảm sát Nam Kinh, cũng thường được gọi là vụ \"Cưỡng hiếp Nam Kinh\", là một tội ác chiến tranh do quân đội Nhật Bản tiến hành bên trong và xung quanh Nam Kinh, Trung Quốc sau khi thành phố này rơi vào tay Quân đội Thiên hoàng Nhật Bản ngày 13 tháng 12 năm', 'kinhdi2'),
-(7, 'Lắng nghe gió hát', 150, 120, 'Tiểu thuyết', 'Haruki Murakami', 'Lắng nghe gió hát (風の歌を聴け Kaze no uta wo kike?) là tên tiểu thuyết đầu tay phát hành năm 1979 của nhà văn Nhật Bản Murakami Haruki. Lắng nghe gió hát xuất hiện lần đầu trong số tháng 6 năm 1979 của Gunzo (một trong những tạp chí văn học có ảnh hưởng nhất ', 'tieuthuyet2'),
+(7, 'Lắng nghe hơi thở', 150, 120, 'Tiểu thuyết', 'Lưu Đình Long', 'Lắng nghe gió hát (風の歌を聴け Kaze no uta wo kike?) là tên tiểu thuyết đầu tay phát hành năm 1979 của nhà văn Nhật Bản Murakami Haruki. Lắng nghe gió hát xuất hiện lần đầu trong số tháng 6 năm 1979 của Gunzo (một trong những tạp chí văn học có ảnh hưởng nhất ', 'tieuthuyet2'),
 (8, 'Grimgar tập 1', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lighnovel1'),
 (9, 'Grimgar tập 2', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lightnovel2'),
 (18, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12', 18, 33, 'Light Novel, Đời thường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 12\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn k', 'oregairu12'),
@@ -75,18 +75,18 @@ CREATE TABLE `tb_img` (
 
 INSERT INTO `tb_img` (`img_id`, `img_url`, `img_alt`) VALUES
 ('conan67', 'book-img/conan67.jpg', 'conan'),
-('cotich1', 'book-img/Co-tich-1.jpg', 'Hoàng tử bé'),
-('cotich2', 'book-img/Co-tich-2.jpg', 'Truyện cổ Andersen'),
+('cotich1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187010.jpg', 'Hoàng tử bé'),
+('cotich2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_227106.jpg', 'Truyện cổ Andersen'),
 ('datealive12', 'book-img/datealive12.jpg', 'Date A Live Tập 12 - Itsuka Disaster'),
-('kinhdi2', 'book-img/Kinh-di-4.jpg', 'Ác quỷ nam kinh'),
-('lighnovel1', 'book-img/Light-novel-1.jpg', 'Grimgar'),
-('lightnovel2', 'book-img/Light-novel-2.jpg', 'Grimar'),
+('kinhdi2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_182830.jpg', 'Ác quỷ nam kinh'),
+('lighnovel1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/g/r/grimgar-tap-1---tai-ban-2019_1.jpg', 'Grimgar'),
+('lightnovel2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/g/r/grimgar---ao-anh-va-tro-tan-vol-2.jpg', 'Grimgar'),
 ('oregairu12', 'book-img/oregairu12.jpg', 'chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12'),
 ('oregairu6.5', 'book-img/oregairu6.5.jpg', 'chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 6.5'),
 ('sgk10full', 'book-img/sgk10full.jpg', 'Trọn bộ sách giáo khoa lớp 10'),
-('tieuthuyet1', 'book-img/Tieu-thuyet-1.jfif', 'Kafka bên bờ biển'),
-('tieuthuyet2', 'book-img/Tieu-thuyet-2.jpg', 'Lắng nghe gió hát'),
-('trinhtham1', 'book-img/Trinh-tham-1.jpg', 'Phía sau nghi can');
+('tieuthuyet1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_32831.jpg', 'Kafka bên bờ biển'),
+('tieuthuyet2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_234633.jpg', 'Lắng nghe hơi thở'),
+('trinhtham1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187738.jpg', 'Phía sau nghi can');
 
 -- --------------------------------------------------------
 
