@@ -42,8 +42,8 @@
     echo '        <div class="card-body">';
     echo '            <h5><a class="card-title " style="text-decoration: none; color: black;" href="book.php?book_id='.$row['book_id'].'">'.$row['book_name'].'</a></h5>';
     echo '            <p class="card-text" >'.$row['book_author'].'</p>';
-    echo '            <div class="row"><p class="card-text col-md-6" style="color: red;">'.$row['book_price'].'$</p>';
-    echo '            <p class="col-md">Còn lại</p><p class="card-text col-md" style="color: green;">'.$row['book_quantity'].'</p></div>';
+    echo '            <div class="row" ><h6 class="card-text col-md-6" style="color: red; ">'.$row['book_price'].'$</h6>';
+    echo '            <p class="card-text col-md" style="color: green;">Còn lại: '.$row['book_quantity'].'</p></div>';
     echo '        </div>';
     echo '    </div>';
     echo '</div>';
