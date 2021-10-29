@@ -1,7 +1,7 @@
 <?php
     include 'conf.php';
-    $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
     
+    $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
     if(isset($category))
     if($category!='default'){
         $sql .= " and book_category like '$category'";
@@ -21,10 +21,8 @@
     if(isset($maxprice))
     if($maxprice !=''){
         $sql .= " and book_price < $maxprice";
-    }if(isset($page)){
-        $tmp = 8*($page-1);
-        $sql .= " limit $tmp,8";
     }
+
     $result=mysqli_query($conn,$sql);
     while($row=mysqli_fetch_array($result)){
     echo '<div class="col-sm-3">';
