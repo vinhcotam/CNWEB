@@ -35,7 +35,7 @@ include 'conf.php';
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Navbar brand -->
                     <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="./img/Logo.png" height="70" alt="Logo" loading="lazy" />
+                        <img src="./img/Logo.png" height="70" alt="Logo" loading="lazy">
                     </a>
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -93,7 +93,7 @@ include 'conf.php';
 
     <!-- Breadcrumb -->
     <div>
-    <?php
+        <?php
     include 'conf.php';
         $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id='$book_id '";
         $result=mysqli_query($conn,$sql);
@@ -132,25 +132,21 @@ include 'conf.php';
     <div>
 
         <div class="container-expand-lg">
-            <div class="row">
-                <div class="d-flex align-items-start bg-light p-3">
-                    <div class="col-md" style="text-align: left;">
-                        <div class="thumbnail img-center">
-
-                            <img src="<?php echo $row['img_url'] ?>" alt="" height="300px" style="padding-left:30%;">
-
-                            <div class="col-md-6" style="float: right; padding-right:8%;">
-                                <h3><?php echo $row['book_name'] ?></h3>
-                                <h6 class="cost" style="color:red;">Giá:<?php echo $row['book_price'] ?></h6>
-                                <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
-                                <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
-                                <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
-                                <p class="btn-cost">
-                                    <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
-                                    <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
-                                </p>
-                            </div>
-                        </div>
+            <div class="d-flex align-items-start bg-light p-3">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img src="<?php echo $row['img_url'] ?>" width=400 alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <h3><?php echo $row['book_name'] ?></h3>
+                        <h6 class="cost" style="color:red;">Giá:<?php echo $row['book_price'] ?></h6>
+                        <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
+                        <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
+                        <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
+                        <p class="btn-cost">
+                            <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
+                            <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
+                        </p>
                     </div>
                 </div>
             </div>

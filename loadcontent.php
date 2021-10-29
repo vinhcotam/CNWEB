@@ -29,20 +29,21 @@
 
     $result=mysqli_query($conn,$sql);
     while($row=mysqli_fetch_array($result)){
-    echo '<div class="col-sm-3">';
+    echo '<div class="col-sm-3" style="--bs-gutter-x: 5px;--bs-gutter-y: 5px;">';
     echo '    <div class="card" style="width: 100%; height: 100%;">';
     echo '        <br><div class="row">';
-    echo '            <div class="col-2"></div>';
-    echo '            <div class="col-8" style="max-height: 350px; min-height: 100px;">';
-    echo '                <a href="book.php?book_id='.$row['book_id'].'"><img src="'.$row['img_url'].'" class="card-img-top" style=" width: 100%; max-height: 300px;"';
+    echo '            <div class="col-1"></div>';
+    echo '            <div class="col-10">';
+    echo '                <a href="book.php?book_id='.$row['book_id'].'"><img src="'.$row['img_url'].'" width=400 style ="width: 100%; height:auto;"class="card-img-top"';
     echo '                    alt="'.$row['img_alt'].'">';
     echo '            </div>';
-    echo '            <div class="col-2"></div>';
+    echo '            <div class="col-1"></div>';
     echo '        </div>';
     echo '        <div class="card-body">';
     echo '            <h5><a class="card-title " style="text-decoration: none; color: black;" href="book.php?book_id='.$row['book_id'].'">'.$row['book_name'].'</a></h5>';
-    echo '            <p class="card-text">'.$row['book_author'].'</p>';
-    echo '            <p class="card-text" style="color: red;">'.$row['book_price'].'$</p>';
+    echo '            <p class="card-text" >'.$row['book_author'].'</p>';
+    echo '            <div class="row"><p class="card-text col-md-6" style="color: red;">'.$row['book_price'].'$</p>';
+    echo '            <p class="col-md">Còn lại</p><p class="card-text col-md" style="color: green;">'.$row['book_quantity'].'</p></div>';
     echo '        </div>';
     echo '    </div>';
     echo '</div>';
