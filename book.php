@@ -124,22 +124,26 @@ include 'conf.php';
 
     <!-- Book -->
     <div>
+        <?php
+    include 'conf.php';
+        $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id='$book_id '";
+        $result=mysqli_query($conn,$sql);
+        while($row=mysqli_fetch_array($result)){
+    ?>
         <div class="container-expand-lg">
-            <div class="row" >
+            <div class="row">
                 <div class="d-flex align-items-start bg-light p-3">
-                    <div class="col-md-12">
+                    <div class="col-md">
                         <div class="thumbnail img-center">
-                            <div class="col-md"style="float: left; padding-left:35%" >
-                                <img src="./book-img/Co-tich-1.jpg" style="max-height: 250px;min-height: 100px; float:left;">
-                            </div>
-                            <div class="caption">
-                            </div>
-                            <div class="col-md"  style="float: right; padding-right:35%">
-                                <h3>Hoàng Tử Bé</h3>
-                                <p class="cost">Giá: 200</p>
-                                <p class="author">Tác giả: Antoine de Saint-Exupéry</p>
-                                <p class="category">Thể loại: Cổ tích</p>
-                                <p class="intro">Giới thiệu: Truyện thiếu nhi khá hay ho</p>
+
+                            <img src="<?php echo $row['img_url'] ?>" alt="" height="300px" style="padding-left:30%;">
+
+                            <div class="col-md-6" style="float: right; padding-right:8%;">
+                                <h3><?php echo $row['book_name'] ?></h3>
+                                <p class="cost">Giá:<?php echo $row['book_price'] ?></p>
+                                <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
+                                <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
+                                <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
                                 <p class="btn-cost">
                                     <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
                                     <a href="cart.php" class="btn btn-success" role="button">Mua ngay</a>
@@ -149,138 +153,141 @@ include 'conf.php';
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- EndBook -->
+            <?php
+        }
+    ?>
+            <!-- EndBook -->
 
 
-        <!-- Footer -->
-        <footer class="text-center text-lg-start bg-light text-muted">
-            <!-- Section: Social media -->
-            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                <!-- Left -->
-                <div class="me-5 d-none d-lg-block">
-                    <span>Get connected with us on social networks:</span>
-                </div>
-                <!-- Left -->
-
-                <!-- Right -->
-                <div>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-                <!-- Right -->
-            </section>
-            <!-- Section: Social media -->
-
-            <!-- Section: Links  -->
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <!-- Grid row -->
-                    <div class="row mt-3">
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3"></i>IDEA Bookstore
-                            </h6>
-                            <p>
-                                175 Tây Sơn, Quận Đống Đa, Hà Nội -
-                                Công Ty Cổ Phần Phát Hành Sách IDEA Group -
-                                IDEA Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua
-                                và nhận
-                                hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống IDEA trên toàn quốc.
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Dịch vụ
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Điều khoản sử dụng</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Chính sách bảo mật</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Giới thiệu</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Hệ thống trung tâm - nhà sách</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Hỗ trợ
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Chính sách đổi trả - Hoàn tiền</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Phương thức vận chuyển</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Phương thức thanh toán và xuất Hóa đơn</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Contact
-                            </h6>
-                            <p><i class="fas fa-home me-3"></i> Hà Nội, HN 10000, VN</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"></i>
-                                info@ideagroup.net
-                            </p>
-                            <p><i class="fas fa-phone me-3"></i> + 84 xxx xxx xxx</p>
-                            <p><i class="fas fa-print me-3"></i> + 84 xxx xxx xxy</p>
-                        </div>
-                        <!-- Grid column -->
+            <!-- Footer -->
+            <footer class="text-center text-lg-start bg-light text-muted">
+                <!-- Section: Social media -->
+                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                    <!-- Left -->
+                    <div class="me-5 d-none d-lg-block">
+                        <span>Get connected with us on social networks:</span>
                     </div>
-                    <!-- Grid row -->
+                    <!-- Left -->
+
+                    <!-- Right -->
+                    <div>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <!-- Right -->
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="fas fa-gem me-3"></i>IDEA Bookstore
+                                </h6>
+                                <p>
+                                    175 Tây Sơn, Quận Đống Đa, Hà Nội -
+                                    Công Ty Cổ Phần Phát Hành Sách IDEA Group -
+                                    IDEA Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua
+                                    và nhận
+                                    hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống IDEA trên toàn quốc.
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Dịch vụ
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Điều khoản sử dụng</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Chính sách bảo mật</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Giới thiệu</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Hệ thống trung tâm - nhà sách</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Hỗ trợ
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Chính sách đổi trả - Hoàn tiền</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Phương thức vận chuyển</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Phương thức thanh toán và xuất Hóa đơn</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Contact
+                                </h6>
+                                <p><i class="fas fa-home me-3"></i> Hà Nội, HN 10000, VN</p>
+                                <p>
+                                    <i class="fas fa-envelope me-3"></i>
+                                    info@ideagroup.net
+                                </p>
+                                <p><i class="fas fa-phone me-3"></i> + 84 xxx xxx xxx</p>
+                                <p><i class="fas fa-print me-3"></i> + 84 xxx xxx xxy</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2021 Copyright:
+                    <a class="text-reset fw-bold" href="">IDEA GROUP</a>
                 </div>
-            </section>
-            <!-- Section: Links  -->
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
 
-            <!-- Copyright -->
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2021 Copyright:
-                <a class="text-reset fw-bold" href="">IDEA GROUP</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous">
+            </script>
 </body>
 
 </html>
