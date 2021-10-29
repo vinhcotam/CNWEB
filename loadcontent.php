@@ -1,7 +1,7 @@
 <?php
     include 'conf.php';
     
-    $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
+    $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id order by book_id asc";
     if(isset($category))
     if($category!='default'){
         $sql .= " and book_category like '$category'";
