@@ -1,22 +1,22 @@
 <?php
 	session_start();
-	if(isset($_POST['cart'])){
-		$book_id = $_POST['bookid'];
-	}
+		$book_id = $_GET['id'];
 	include '../conf.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="../css/empty-cart.css">
     <title>Giỏ Hàng</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -87,66 +87,50 @@
         <!-- endNavbar -->
     </header>
 
-<!-- Table -->
-<div class="container-fluid">
-    <div class="shopping-cart mt-5">
-        <table class="table">
-            <thead>
-                <tr style="text-align: center;">
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        <div class="product-info" style="text-align: center;">
-                            <img width="80" src="../book-img/Co-tich-1.jpg" alt="">
-                            <a href="book.php">Hoàng Tử Bé</a>
-                        </div>
-                    </th>
-                    <td style="text-align: center;">1</td>
-                    <td style="text-align: center;">200</td>
-                    <td style="text-align: center;">
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="product-info" style="text-align: center;">
-                            <img width="80" src="../book-img/Kinh-di-1.jpg" alt="">
-                            <a href="book.php">Another S/O</a>
-                        </div>
-                    </th>
-                    <td style="text-align: center;">1</td>
-                    <td style="text-align: center;">200</td>
-                    <td style="text-align: center;">
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="product-info" style="text-align: center;">
-                            <img width="80" src="../book-img/Tieu-thuyet-1.jfif" alt="">
-                            <a href="book.php">Kafka bên bờ biển</a>
-                        </div>
-                    </th>
-                    <td style="text-align: center;">1</td>
-                    <td style="text-align: center;">150</td>
-                    <td style="text-align: center;">
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>  
-        <div class="checkout-button" style="text-align: center;">
-            <a href="../user/checkout.php" class="btn btn-primary btn-lg active mt-2 mb-4" role="button" aria-pressed="true">Thanh Toán</a>
-        </div>  
+    <!-- Table -->
+    <div class="container-fluid">
+        <div class="shopping-cart mt-5">
+            <table class="table">
+                <thead>
+                    <tr >
+                        <th scope="col">Tên sách</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">Số Lượng</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Thành tiền</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <?php
+                $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id=$book_id";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_assoc($result)){              
+                ?>
+                <tbody>
+                    <?php
+                            echo '<tr>';    
+                                echo        '<td>'.$row["book_name"].'</td>';
+                                echo '<td><img src="../'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150"></td>';
+                                echo '<td >'.$_GET['qty'].'</td>';
+                                echo '<td >'.$row["book_price"].'</td>';
+                                echo '<td >'. $row["book_price"] * $_GET['qty'].'</td>';
+                                echo '<td >';
+                                echo    '<a href="delcart.php?id='.$book_id.'" type="button" class="btn btn-danger">Delete</a>';
+                                echo '</td>';
+                        echo '</tr>';
+                ?>
+                    <?php
+                }
+                ?>
+                </tbody>
+            </table>
+            <div class="checkout-button" style="text-align: center;">
+                <a href="checkout.php" class="btn btn-primary btn-lg active mt-2 mb-4" role="button"
+                    aria-pressed="true">Thanh Toán</a>
+            </div>
+        </div>
     </div>
-</div>
-<!-- endTable -->
+    <!-- endTable -->
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
@@ -270,8 +254,13 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <!-- Footer -->    
+    <!-- Footer -->
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+</script>
+
 </html>

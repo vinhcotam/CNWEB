@@ -132,10 +132,9 @@ include 'conf.php';
     <div>
 
         <div class="container-expand-lg">
-            <!--<form action="user/cart.php?id=<?php //echo $book_id; ?>" method="POST">-->
+            
                 <div class="d-flex align-items-start bg-light p-3">
                     <div class="row">
-
                         <div class="col-md-4 text-center">
                             <img src="<?php echo $row['img_url'] ?>" width=400 alt="">
                         </div>
@@ -148,16 +147,24 @@ include 'conf.php';
                             <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
                             <p class="btn-cost">
                                 <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
-                            <div>
-                                <input type="number" class="product-quantity" name="quantity" value="1" size="2" />
-                                <a href="user/cart.php?id=<?php echo $book_id; ?>" class="btn btn-success" role="button">Thêm vào giỏ hàng</a>
+                            <div>               
+                                <input  type="number" class="product-quantity" name="quantity" id="quantity" value="1" size="2" />
+                                <button id="bt" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                <script>
+                                    
+                                    var bt=document.getElementById('bt');
+                                    bt.addEventListener('click',function(){
+                                        var qty=document.getElementById('quantity').value;
+                                        window.open('user/cart.php?id=<?php echo $book_id;?>&qty='+qty);
+                                    })
+                                    
+                                </script>
+                                <!-- <a href="user/cart.php?id=<?php echo $book_id;?> &qty= " class="btn btn-success" role="button">Thêm vào giỏ hàng</a> -->
                             </div>
                             </p>
                         </div>
-
                     </div>
                 </div>
-            <!--</form>-->
             <?php
         }
     ?>
