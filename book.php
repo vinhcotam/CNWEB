@@ -93,6 +93,12 @@ include 'conf.php';
 
     <!-- Breadcrumb -->
     <div>
+    <?php
+    include 'conf.php';
+        $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id='$book_id '";
+        $result=mysqli_query($conn,$sql);
+        while($row=mysqli_fetch_array($result)){
+    ?>
         <div class="container-expand-lg">
             <div class="d-flex align-items-start bg-light p-3">
                 <div class="col-md-6">
@@ -103,7 +109,7 @@ include 'conf.php';
                             <li class="breadcrumb-item"><a href=""
                                     style="color: black; text-decoration: none;">Search</a></li>
                             <li class="breadcrumb-item active" style="color: black; text-decoration: none;"
-                                aria-current="page">Hoàng Tử Bé</li>
+                                aria-current="page"><?php echo $row['book_name'] ?></li>
                         </ol>
                     </nav>
                 </div>
@@ -124,12 +130,7 @@ include 'conf.php';
 
     <!-- Book -->
     <div>
-        <?php
-    include 'conf.php';
-        $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id='$book_id '";
-        $result=mysqli_query($conn,$sql);
-        while($row=mysqli_fetch_array($result)){
-    ?>
+
         <div class="container-expand-lg">
             <div class="row">
                 <div class="d-flex align-items-start bg-light p-3">
