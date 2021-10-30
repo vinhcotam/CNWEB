@@ -144,7 +144,7 @@
                         <div>
                             <a class="pull-left" href="book.php">
                                 <div class="product-info" style="text-align: center;">
-                                    <img width="93.5" src="../book-img/Co-tich-1.jpg" alt="">
+                                    <img width="90" src="../book-img/Co-tich-1.jpg" alt="">
                                 </div>
                             </a>
                         </div>
