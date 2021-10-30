@@ -37,7 +37,7 @@
     echo '        <br><div class="row">';
     echo '            <div class="col-1"></div>';
     echo '            <div class="col-10">';
-    echo '                <a href="book.php?book_id='.$row['book_id'].'"><img src="'.$row['img_url'].'" width=400 style ="width: 100%; height:auto;"class="card-img-top"';
+    echo '                <a href="book.php?book_id='.$row['book_id'].'&username='.$username.'"><img src="'.$row['img_url'].'" width=400 style ="width: 100%; height:auto;"class="card-img-top"';
     echo '                    alt="'.$row['img_alt'].'">';
     echo '            </div>';
     echo '            <div class="col-1"></div>';

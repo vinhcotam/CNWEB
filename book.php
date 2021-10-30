@@ -1,6 +1,8 @@
 <?php
 if(isset($_GET['book_id'])) 
 $book_id=$_GET['book_id'];
+if(isset($_GET['username']))
+$username=$_GET['username'];
 include 'conf.php';
 ?>
 <!doctype html>
@@ -97,7 +99,7 @@ include 'conf.php';
     include 'conf.php';
         $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id='$book_id '";
         $result=mysqli_query($conn,$sql);
-        while($row=mysqli_fetch_array($result)){
+        $row=mysqli_fetch_array($result);
     ?>
         <div class="container-expand-lg">
             <div class="d-flex align-items-start bg-light p-3">
@@ -132,42 +134,38 @@ include 'conf.php';
     <div>
 
         <div class="container-expand-lg">
-            
-                <div class="d-flex align-items-start bg-light p-3">
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <img src="<?php echo $row['img_url'] ?>" width=400 alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <h3><?php echo $row['book_name'] ?></h3>
-                            <input name="text" id="text" value="<?php echo $book_id; ?>" hidden="hidden">
-                            <h6 class="cost" style="color:red;">Giá:<?php echo $row['book_price'] ?></h6>
-                            <p class="author">Tác giả:<?php echo $row['book_author'] ?></p>
-                            <p class="category">Thể loại:<?php echo $row['book_category'] ?></p>
-                            <p class="intro">Giới thiệu:<?php echo $row['book_intro'] ?></p>
-                            <p class="btn-cost">
-                                <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
-                            <div>               
-                                <input  type="number" class="product-quantity" name="quantity" id="quantity" value="1" size="2" />
-                                <button id="bt" class="btn btn-success">Thêm vào giỏ hàng</button>
-                                <script>
-                                    
-                                    var bt=document.getElementById('bt');
-                                    bt.addEventListener('click',function(){
-                                        var qty=document.getElementById('quantity').value;
-                                        window.open('user/cart.php?id=<?php echo $book_id;?>&qty='+qty);
-                                    })
-                                    
-                                </script>
-                                <!-- <a href="user/cart.php?id= &qty= " class="btn btn-success" role="button">Thêm vào giỏ hàng</a> -->
-                            </div>
-                            </p>
+
+            <div class="d-flex align-items-start bg-light p-3">
+                <div class="row">
+                    <div class="col-xl-4 text-center">
+                        <img src="<?php echo $row['img_url'] ?>" alt="">
+                    </div>
+                    <div class="col-xl-8">
+                        <h3><?php echo $row['book_name'] ?></h3>
+                        <input name="text" id="text" value="<?php echo $book_id; ?>" hidden="hidden">
+                        <h5 class="cost" style="color:red;">Giá: <?php echo $row['book_price'] ?>$</h5>
+                        <h6 class="author">Tác giả: <?php echo $row['book_author'] ?></h6>
+                        <p class="category">Thể loại: <?php echo $row['book_category'] ?></p>
+                        <p class="intro">Giới thiệu: <?php echo $row['book_intro'] ?></p>
+                        <div>
+                            <input type="number" style="border-color: black; border-radius: 5px; height: 32px;"
+                                class="product-quantity" name="quantity" id="quantity" value="1"
+                                max="<?php echo $row['book_quantity']; ?>"
+                                oninput="validity.valid||(value='<?php echo $row['book_quantity']; ?>');" size="2">
+                            <button id="bt" class="btn btn-success">Thêm vào giỏ hàng</button>
+                            <script>
+                            var bt = document.getElementById('bt');
+                            bt.addEventListener('click', function() {
+                                var qty = document.getElementById('quantity').value;
+                                window.open('user/checkout.php?id=<?php echo $book_id;?>&quantity=' + qty +
+                                    '&username=<?php echo $username;?>');
+                            })
+                            </script>
+                            <!-- <a href="user/cart.php?id= &qty= " class="btn btn-success" role="button">Thêm vào giỏ hàng</a> -->
                         </div>
                     </div>
                 </div>
-            <?php
-        }
-    ?>
+            </div>
             <!-- EndBook -->
 
 

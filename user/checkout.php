@@ -1,14 +1,33 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Thanh Toán</title>
 </head>
+
 <body>
+    <?php
+    include ("../conf.php");
+    if(isset($_GET['id'])) 
+    $book_id=$_GET['id'];
+    if(isset($_GET['username']))
+    $username=$_GET['username'];
+    if(isset($_GET['quantity']))
+    $quantity=$_GET['quantity'];
+    $sqluser = "select * from tb_user where user_email = '$username'";
+    $sqlbook = "select * from tb_book, tb_img where book_id = '$book_id' and tb_book.img_id = tb_img.img_id";
+    $resultuser = mysqli_query($conn, $sqluser);
+    $resultbook = mysqli_query($conn, $sqlbook);
+    $rowuser = mysqli_fetch_array($resultuser);
+    $rowbook = mysqli_fetch_array($resultbook);
+    $shipprice = 0;//
+    ?>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -27,16 +46,18 @@
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../home.php">Home</a>
+                            <a class="nav-link" href="../Home.php?username=<?php echo $username?>">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Login.php">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../register.php">Đăng ký</a>
-                        </li>
-                    </ul>
-                    <!-- Left links -->
+                        <?php if($username==''){
+                        echo '<li class="nav-item">';
+                        echo '    <a class="nav-link" href="login.php">Đăng nhập</a>';
+                        echo '</li>';
+                        echo '<li class="nav-item">';
+                        echo '    <a class="nav-link" href="register.php">Đăng ký</a>';
+                        echo '</li>';
+                        }
+                        ?>
+                        <!-- Left links -->
                 </div>
                 <!-- Collapsible wrapper -->
 
@@ -78,139 +99,181 @@
         <!-- endNavbar -->
     </header>
 
-<!-- Checkout -->
-<section>
-<div>    
-  <div class="d-flex align-items-start bg-light pb-4 pb-4" style="height: 400px;">
-    <div class="col-md-6">
-        <div class="billingdetail">
-            <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"><h4 class="widget-title">Thông tin Hóa đơn</h4></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        <div class="form-outline">
-                            <input type="text" id="typeText" class="form-control" />
-                            <label class="form-label" for="typeText"><h6>Họ và tên</h6></label>
-                        </div>
-                        <div class="form-outline">
-                            <input type="text" id="typeText" class="form-control" />
-                            <label class="form-label" for="typeText"><h6>Số điện thoại</h6></label>
-                        </div>
-                        <div class="form-outline">
-                            <input type="text" id="typeText" class="form-control" />
-                            <label class="form-label" for="typeText"><h6>Địa chỉ</h6></label>
-                        </div>
-                    </th>
-                </tr>
-            </table>
-        </div>
-        <div class="paymentmethod">
-            <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"><h4 class="widget-title"> Phương thức Thanh toán </h4></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Thanh toán tiền mặt khi nhận hàng
-                            </label>
-                        </div>
-                    </th>
-                </tr>
-            </table>
-        </div>
-    </div>
-  <div class="col-md-6">
-    <div class="product-checkout-details">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"><h4 class="widget-title" style="text-align: center;">Đơn Hàng</h4></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div>
-                            <a class="pull-left" href="book.php">
-                                <div class="product-info" style="text-align: center;">
-                                    <img width="90" src="../book-img/Co-tich-1.jpg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <ul>
-                            <h5>Hoàng Tử Bé</h5>
-                            <li>
-                                <span>Giá:</span>
-                                <span>$200</span>
-                            </li>
-                            <li>
-                                <span>Số lượng:</span>
-                                <span>1</span>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li>
-                                <h6>Thành tiền:</h6>
-                            </li>
-                            <li>
-                                <h6>Phí vận chuyển:</h6>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>
-                                <span>$200</span>
-                            </li>
-                            <li>
-                                <span>$0</span>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li>
-                                <h6>Tổng:</h6>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>
-                                <span>$200</span>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-  </div>
-</div> 
-    <div class="checkoutbutton bg-light pt-5 pb-2" style="text-align: center;">
-        <button type="button" class="btn btn-primary btn-lg">Tiến hành đặt hàng</button>
-    </div>
-</section>
-<!-- endCheckout -->
+    <!-- Checkout -->
+    <section>
+        <div>
+            <div class="d-flex align-items-start bg-light pb-4 pb-4" style="height: 400px;">
+                <div class="col-md-6">
+                    <div class="billingdetail">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <h4 class="widget-title">Thông tin Hóa đơn</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="typeText">
+                                                <h6>Họ và tên</h6>
+                                            </label>
+                                            <input type="text" id="iName" class="form-control"
+                                                value="<?php echo $rowuser['user_name']?>">
+                                        </div>
+                                        <div class="form-outline">
+                                            <label class="form-label" for="typeText">
+                                                <h6>Số điện thoại</h6>
+                                            </label>
+                                            <input type="text" id="iPhone" class="form-control">
+                                        </div>
+                                        <div class="form-outline">
+                                            <label class="form-label" for="typeText">
+                                                <h6>Địa chỉ</h6>
+                                            </label>
+                                            <input type="text" id="iAddress" class="form-control">
+                                        </div>
+                                    </th>
+                                </tr>
+                        </table>
+                    </div>
+                    <div class="paymentmethod">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <h4 class="widget-title"> Phương thức Thanh toán </h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault" />
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Thanh toán tiền mặt khi nhận hàng
+                                            </label>
+                                        </div>
+                                    </th>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product-checkout-details">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <h4 class="widget-title" style="text-align: center;">Đơn Hàng</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <a class="pull-left" href="book.php">
+                                                <div class="product-info" style="text-align: center;">
+                                                    <img width="90" src="<?php echo $rowbook['img_url']?>" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <h5><?php echo $rowbook['book_name']?></h5>
+                                            <li>
+                                                <span>Giá:</span>
+                                                <span><?php echo $rowbook['book_price']?>$</span>
+                                            </li>
+                                            <li>
+                                                <span>Số lượng:</span>
+                                                <span><?php echo $quantity?></span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <h6>Thành tiền:</h6>
+                                            </li>
+                                            <li>
+                                                <h6>Phí vận chuyển:</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <span><?php echo $bookprice = 1*(int)$rowbook['book_price']* $_GET['quantity']; ?>$</span>
+                                            </li>
+                                            <li>
+                                                <span><?php echo $shipprice;?>$</span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <h6>Tổng:</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <span><?php echo $total = $bookprice+$shipprice;?>$</span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="checkoutbutton bg-light pt-5 pb-2" style="text-align: center;">
+                    <button type="button" id="btnorder" class="btn btn-primary btn-lg">Tiến hành đặt hàng</button>
+            </div>
+            <script>
+                var bt = document.getElementById('btnorder');
+                bt.addEventListener('click', function() {
+                    var name = document.getElementById("iName").value;
+                    var phone = document.getElementById('iPhone').value;
+                    var address = document.getElementById('iAddress').value;
+                    if (name == '') {
+                        alert('Vui lòng nhập tên');
+                        return;
+                    }
+                    if (phone == '') {
+                        alert('Vui lòng nhập số điện thoại');
+                        return;
+                    }
+                    if (address == '') {
+                        alert('Vui lòng nhập địa chỉ nhận hàng');
+                        return;
+                    }
+                    window.open("processorder.php"+
+                    "?id="+'<?php echo $book_id;?>'+
+                    "&quantity="+'<?php echo $quantity;?>'+
+                    "&username="+'<?php echo $username;?>'+
+                    "&total="+'<?php echo $total;?>'+
+                    "&name="+name+"&phone="+phone+"&address="+address
+                    );
+                })
+            </script>
+
+    </section>
+    <!-- endCheckout -->
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
@@ -334,8 +397,13 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <!-- Footer -->    
+    <!-- Footer -->
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+</script>
+
 </html>
