@@ -112,7 +112,7 @@
             <table class="table">
             <thead>
                 <tr>
-                    <th scope="col"><h4 class="widget-title">Phương thức Thanh toán</h4></th>
+                    <th scope="col"><h4 class="widget-title"> Phương thức Thanh toán </h4></th>
                 </tr>
             </thead>
             <tbody>
