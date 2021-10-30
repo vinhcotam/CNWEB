@@ -2,10 +2,8 @@
     session_start();
     if(!isset($_SESSION['loginOK'])){
         header("Location:../login.php"); 
-        $useremail = $_POST[$_SESSION['loginOK']];
-         //$useremail=$_SESSION['loginOK'];
-        // echo $useremail;
     }
+    
 
 ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -13,7 +11,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../css/infor.css">
 <!------ Include the above in your HEAD tag ---------->
 
@@ -23,10 +21,15 @@ A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themefores
 Licensed under MIT
 -->
 <?php
-  /*  include('../conf.php');
-    $sql="select * from tb_user where user_email='$useremail'";
+  include('../conf.php');
+  if(isset($_GET['username']))
+        $username = $_GET['username'];
+        else if(isset($POST['username']))
+        $username = $POST['username'];
+            else $username='';
+    $sql="select * from tb_user where user_email='$username'";
     $result=mysqli_query($conn,$sql);
-    if($row=mysqli_num_rows($result)){*/
+    while($row=mysqli_fetch_assoc($result)){
 ?>
 <div class="container">
     <div class="row profile">
@@ -34,16 +37,28 @@ Licensed under MIT
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="../img/avatar2.jpg" class="img-responsive" alt="">
+                    <img src="../img/no-avatar.jpg" class="img-responsive" alt="">
                 </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">
-                        Marcus Doe
-                    </div>
+                <?php
+                echo '<div class="profile-usertitle">';
+                echo  '   <div class="profile-usertitle-name">' ;
+                         echo  '<p>'.$row['user_name'].' </p>';
+                 echo   '</div>';
+                 $trangthai="Chưa kích hoạt";
+                    ?>
+
                     <div class="profile-usertitle-job">
-                        Developer
+                        <?php  
+                        if($row['user_status']=true){
+                            $trangthai="Đã kích hoạt";
+                            echo $trangthai;
+                        }else{
+                            echo $trangthai;
+                        }
+                        
+                        ?>
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
@@ -63,9 +78,14 @@ Licensed under MIT
                                 Chỉnh sửa tài khoản </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="checkstatus.php?id=<?php echo $username;?>" target="_blank">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Tình trạng đơn hàng </a>
+                        </li>
+                        <li>
+                            <a href="../home.php" target="_blank">
+                                <i class="glyphicon glyphicon-ok"></i>
+                                Quay về trang chủ </a>
                         </li>
                         <li>
                             <a href="../logout.php">
@@ -84,10 +104,8 @@ Licensed under MIT
     </div>
 </div>
 <?php
-//}
+}
 ?>
 <center>
     <strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">Idea Bookstore</a></strong>
 </center>
-<br>
-<br>
