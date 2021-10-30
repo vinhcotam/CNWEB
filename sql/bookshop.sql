@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 05:12 PM
+-- Thời gian đã tạo: Th10 30, 2021 lúc 09:30 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.10
+-- Phiên bản PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,7 +51,7 @@ INSERT INTO `tb_book` (`book_id`, `book_name`, `book_price`, `book_quantity`, `b
 (7, 'Lắng nghe hơi thở', 150, 120, 'Tiểu thuyết', 'Lưu Đình Long', 'Lắng nghe gió hát (風の歌を聴け Kaze no uta wo kike?) là tên tiểu thuyết đầu tay phát hành năm 1979 của nhà văn Nhật Bản Murakami Haruki. Lắng nghe gió hát xuất hiện lần đầu trong số tháng 6 năm 1979 của Gunzo (một trong những tạp chí văn học có ảnh hưởng nhất ', 'tieuthuyet2'),
 (8, 'Grimgar tập 1', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lighnovel1'),
 (9, 'Grimgar tập 2', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lightnovel2'),
-(18, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12', 18, 33, 'Light Novel, Đời thường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 12\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn k', 'oregairu12'),
+(18, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12', 18, 33, 'Light novel , Học đường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 12\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn k', 'oregairu12'),
 (19, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 6.5', 18, 63, 'Light Novel, Đời thường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 6.5\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn ', 'oregairu6.5'),
 (15, 'Date A Live Tập 12 Itsuka Disaster', 17, 109, 'Tình cảm, Siêu nhiên', 'Koushi Tachibana', 'Date A Live - Tập 12\r\n\r\nNgày 1 tháng 2, khi cái lạnh thấu xương tìm đến với thành phố Tengu, Itsuka Shidou đột nhiên vượt ngoài tầm kiểm soát. Cậu lần lượt phá các kỷ lục thế giới trong các bộ môn về thể chất, hơn nữa còn làm vỡ cửa kính và nứt tường chỉ ', 'datealive12'),
 (14, 'Sách Giáo Khoa Bộ Lớp 10 - Sách Bài Học (Bộ 14 Cuốn)', 10, 800, 'Học tập', 'Bộ Giáo Dục Và Đào Tạo', 'Sách Giáo Khoa Bộ Lớp 10 - Sách Bài Học (Bộ 14 Cuốn) (2021)\r\n\r\nBao Gồm:\r\n\r\nSTT	Tên sản phẩm\r\n1	Giáo dục Quốc phòng - An ninh 10\r\n2	Đại số 10\r\n3	Hình học 10\r\n4	Vật lí 10\r\n5	Hoá học 10\r\n6	Sinh học 10\r\n7	Công nghệ 10 - Nông, lâm, ngư nghiệp, tạo lập doanh ng', 'sgk10full'),
@@ -74,16 +74,16 @@ CREATE TABLE `tb_img` (
 --
 
 INSERT INTO `tb_img` (`img_id`, `img_url`, `img_alt`) VALUES
-('conan67', 'book-img/conan67.jpg', 'conan'),
+('conan67', 'https://cdn0.fahasa.com/media/catalog/product/cache/2/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_183331.jpg', 'conan'),
 ('cotich1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187010.jpg', 'Hoàng tử bé'),
 ('cotich2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_227106.jpg', 'Truyện cổ Andersen'),
-('datealive12', 'book-img/datealive12.jpg', 'Date A Live Tập 12 - Itsuka Disaster'),
+('datealive12', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/q/q/qqqqdal1img_5916_2.jpg', 'Date A Live Tập 12 - Itsuka Disaster'),
 ('kinhdi2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_182830.jpg', 'Ác quỷ nam kinh'),
 ('lighnovel1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/g/r/grimgar-tap-1---tai-ban-2019_1.jpg', 'Grimgar'),
 ('lightnovel2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/g/r/grimgar---ao-anh-va-tro-tan-vol-2.jpg', 'Grimgar'),
-('oregairu12', 'book-img/oregairu12.jpg', 'chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12'),
-('oregairu6.5', 'book-img/oregairu6.5.jpg', 'chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 6.5'),
-('sgk10full', 'book-img/sgk10full.jpg', 'Trọn bộ sách giáo khoa lớp 10'),
+('oregairu12', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/c/h/chuyenhuan-04-biacung_1.jpg', 'chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12'),
+('oregairu6.5', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/c/h/chuy_n-t_nh-thanh-xu_n-bi-h_i-65.jpg', 'chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 6.5'),
+('sgk10full', 'https://cdn0.fahasa.com/media/catalog/product/cache/2/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/3/3/3300000001135.jpg', 'Trọn bộ sách giáo khoa lớp 10'),
 ('tieuthuyet1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_32831.jpg', 'Kafka bên bờ biển'),
 ('tieuthuyet2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_234633.jpg', 'Lắng nghe hơi thở'),
 ('trinhtham1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187738.jpg', 'Phía sau nghi can');
