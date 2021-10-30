@@ -87,15 +87,15 @@
             <?php echo '<img src="'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150">'; ?>
         </div>
         <div class="mb-3">
-            <label for="category" class="col-sm-2 col-form-label">Thể loại</label>
+            <label for="book_category" class="col-sm-2 col-form-label">Thể loại</label>
             <div class="col-sm-10">
-                <select name="category" id="category">
+                <select name="book_category" id="book_category">
                     <?php
                             $sql = "SELECT * FROM tb_book ";
                             $result = mysqli_query($conn,$sql);
                             if(mysqli_num_rows($result)){
                                 while($row=mysqli_fetch_assoc($result)){                      
-                                   echo '<option value="">'.$row['book_category'].'</option>';                                 
+                                   echo '<option value="'.$row['book_category'].'">'.$row['book_category'].'</option>';                                 
                                 }
                             }
                         ?>

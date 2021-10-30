@@ -28,7 +28,7 @@ else {
                 </div>
                 <div class="form-floating">
                     <button class="btn btn-primary" type="sumbit">Tìm kiếm</button>
-                    <button class="btn btn-primary" type="sumbit">Thêm sách</button>
+                    <a href="addbook.php" class="btn btn-primary" type="sumbit">Thêm sách</a>
                 </div>
             </form>
         </div>
