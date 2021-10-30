@@ -4,7 +4,7 @@
     if(isset($_GET['id'])){
         $id=$_GET['id'];
     }
-    $sql = "delete from tb_book where book_id ='$id'";
+    $sql = "update tb_book set book_quantity=0 where book_id ='$id'";
     //echo $sql;
     $result=mysqli_query($conn,$sql);
     if($result>0){

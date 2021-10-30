@@ -149,6 +149,7 @@ include 'conf.php';
                                 <a href="home.php" class="btn btn-success" role="button">Quay lại trang chủ</a>
                             <div>               
                                 <input  type="number" class="product-quantity" name="quantity" id="quantity" value="1" size="2" />
+                                
                                 <button id="bt" class="btn btn-success">Thêm vào giỏ hàng</button>
                                 <script>
                                     
