@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2021 lúc 10:06 AM
+-- Thời gian đã tạo: Th10 30, 2021 lúc 10:55 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -91,6 +91,18 @@ INSERT INTO `tb_img` (`img_id`, `img_url`, `img_alt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tb_post`
+--
+
+CREATE TABLE `tb_post` (
+  `post_id` int(11) NOT NULL,
+  `user_email` varchar(100) DEFAULT NULL,
+  `comment` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tb_receipt`
 --
 
@@ -134,10 +146,26 @@ INSERT INTO `tb_user` (`user_name`, `user_email`, `user_pass`, `user_status`, `u
 --
 
 --
+-- Chỉ mục cho bảng `tb_post`
+--
+ALTER TABLE `tb_post`
+  ADD PRIMARY KEY (`post_id`);
+
+--
 -- Chỉ mục cho bảng `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`user_name`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `tb_post`
+--
+ALTER TABLE `tb_post`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

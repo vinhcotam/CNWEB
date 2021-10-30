@@ -49,8 +49,8 @@ Licensed under MIT
                  $trangthai="Chưa kích hoạt";
                     ?>
 
-                    <div class="profile-usertitle-job">
-                        <?php  
+                <div class="profile-usertitle-job">
+                    <?php  
                         if($row['user_status']=true){
                             $trangthai="Đã kích hoạt";
                             echo $trangthai;
@@ -59,49 +59,52 @@ Licensed under MIT
                         }
                         
                         ?>
-                    </div>
                 </div>
-                <!-- END SIDEBAR USER TITLE -->
-                <!-- SIDEBAR BUTTONS -->
-                <!-- END SIDEBAR BUTTONS -->
-                <!-- SIDEBAR MENU -->
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="#">
-                                <i class="glyphicon glyphicon-home"></i>
-                                Thông tin tổng quát </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="glyphicon glyphicon-user"></i>
-                                Chỉnh sửa tài khoản </a>
-                        </li>
-                        <li>
-                            <a href="checkstatus.php?id=<?php echo $username;?>" target="_blank">
-                                <i class="glyphicon glyphicon-ok"></i>
-                                Tình trạng đơn hàng </a>
-                        </li>
-                        <li>
-                            <a href="../home.php" target="_blank">
-                                <i class="glyphicon glyphicon-ok"></i>
-                                Quay về trang chủ </a>
-                        </li>
-                        <li>
-                            <a href="../logout.php">
-                                <i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END MENU -->
             </div>
-        </div>
-        <div class="col-md-9">
-            <div class="profile-content">
-                Some user related content goes here...
+            <!-- END SIDEBAR USER TITLE -->
+            <!-- SIDEBAR BUTTONS -->
+            <!-- END SIDEBAR BUTTONS -->
+            <!-- SIDEBAR MENU -->
+            <div class="profile-usermenu">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Thông tin tổng quát </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Chỉnh sửa tài khoản </a>
+                    </li>
+                    <li>
+                        <a href="checkstatus.php?id=<?php echo $username;?>" target="_blank">
+                            <i class="glyphicon glyphicon-ok"></i>
+                            Tình trạng đơn hàng </a>
+                    </li>
+                    <li>
+                        <a href="checkstatus.php?id=<?php echo $username;?>" target="_blank">
+                        <i class="fas fa-comments"></i>Gửi ý kiến của bạn  </a>
+                    </li>
+                    <li>
+                        <a href="../home.php" target="_blank">
+                        <i class="fas fa-home"></i>Quay về trang chủ </a>
+                    </li>
+                    <li>
+                        <a href="../logout.php">
+                            <i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                    </li>
+                </ul>
             </div>
+            <!-- END MENU -->
         </div>
     </div>
+    <div class="col-md-9">
+        <div class="profile-content">
+            Some user related content goes here...
+        </div>
+    </div>
+</div>
 </div>
 <?php
 }
