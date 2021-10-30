@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2021 lúc 09:30 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.11
+-- Thời gian đã tạo: Th10 30, 2021 lúc 10:06 AM
+-- Phiên bản máy phục vụ: 10.4.19-MariaDB
+-- Phiên bản PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,7 +98,10 @@ CREATE TABLE `tb_receipt` (
   `receipt_id` varchar(100) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `date_buy` date NOT NULL,
-  `sale_off` float NOT NULL
+  `status` int(1) NOT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `total` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -121,7 +124,7 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`user_name`, `user_email`, `user_pass`, `user_status`, `user_code`, `level_user`) VALUES
-('a', 'levanduongl70@gmail.com', '$2y$10$wOZ64.sublbL9o6Pk8OswutUgZjfU2oOBd84mkwwzKvmSbw4mzYGa', 1, 'ac5dc87550e728a9255a14f2bbacc805', 0),
+('a', 'levanduongl70@gmail.com', '$2y$10$wOZ64.sublbL9o6Pk8OswutUgZjfU2oOBd84mkwwzKvmSbw4mzYGa', 0, 'ac5dc87550e728a9255a14f2bbacc805', 0),
 ('aa', 'aaa@gmail.com', '$2y$10$YoxcoAIW7CXv3FJldnvGBe6.MJ3GbhzQAS/EpHT5pEctt8Wh2DA4u', 0, '2a0eb02d059c1266951e577f1665570e', 0),
 ('admin', 'vinhvinh4501@gmail.com', '$2y$10$Y.1aViyB5pbxN1hUwP6QeeXBdqMOjIBEV0v33dGUD0fIwOeghpYD2', 1, 'c5bfb92d80bde3f62abfacc08a62c3fb', 1),
 ('vinh', 'vinhcotam04052001@gmail.com', '$2y$10$a6aG2eleM2fqSehjK3UNJORg.0Sfln8xD5n4LDa2jCgOx3acg72..', 1, '5829d162726b78fdf7f196022f046d2e', 0);
@@ -129,12 +132,6 @@ INSERT INTO `tb_user` (`user_name`, `user_email`, `user_pass`, `user_status`, `u
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `tb_img`
---
-ALTER TABLE `tb_img`
-  ADD UNIQUE KEY `img_id` (`img_id`);
 
 --
 -- Chỉ mục cho bảng `tb_user`
