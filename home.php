@@ -15,6 +15,11 @@
 <body>
     <?php
         include ('conf.php');
+        if(isset($_GET['username']))
+        $username = $_GET['username'];
+        else if(isset($POST['username']))
+        $username = $POST['username'];
+            else $username='';
     ?>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,12 +41,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">Đăng ký</a>
-                        </li>
+                        <?php if($username==''){
+                        echo '<li class="nav-item">';
+                        echo '    <a class="nav-link" href="login.php">Đăng nhập</a>';
+                        echo '</li>';
+                        echo '<li class="nav-item">';
+                        echo '    <a class="nav-link" href="register.php">Đăng ký</a>';
+                        echo '</li>';
+
+                        }
+                        ?>
                     </ul>
                     <!-- Left links -->
                 </div>
@@ -67,11 +76,6 @@
                     </ul>
 
                     <!-- Avatar -->
-                    <?php
-                        if(isset($_GET['username']))
-                        $username = $_GET['username'];
-                        else $username='';
-                    ?>
                     <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="user/infor.php"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <img src="./img/avatar1.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
@@ -128,7 +132,7 @@
     <section class="products section bg-gray mt-5">
         <div class="container">
 
-            <form action="home.php" method="post">
+            <form action="home.php?username=<?php echo $username; ?>" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-floating mb-3">
@@ -160,33 +164,37 @@
                 </div>
             </form>
             <div class="container p-4">
-                <div class="row align-items-start">
+                
+            </div>
+        </div>
+        </div>
+    </section>
+    <p class="lead text-center text-muted">Danh sách sản phẩm</p><div class="row">
                     <!-- The Loai -->
-                    <div class="col-md-6">
-                        <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Thể Loại
-                            </a>
-                            <?php
-                        $sql="select distinct book_category from tb_book";
-                        $result=mysqli_query($conn,$sql);
-                        if(mysqli_num_rows($result)){
-                            echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">';
-                            while($row=mysqli_fetch_assoc($result)){                              
-                                echo '<li><a class="dropdown-item" href="home.php?category='.$row['book_category'].'">'.$row['book_category'].'</a></li>';                           
-                            }
-                        }
+                    <div class="col-md-4">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Thể loại
+                        </button>
+                        <ul class="dropdown-menu  w-100" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Cổ tích">Cổ tích</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Tiểu thuyết">Tiểu thuyết</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Trinh thám">Trinh thám</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Light novel">Light novel</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Đời thường">Đời thường</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Tình cảm">Tình cảm</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Siêu nhiên">Siêu nhiên</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Học tập">Học tập</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Truyện ngắn">Truyện ngắn</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Hài hước">Hài hước</a></li>
+                            <li><a class="dropdown-item" href="home.php?username=<?php echo $username;?>&category=Sách kĩ năng">Sách kĩ năng</a></li>
+                        </ul>
+                    </div>
 
-                    ?>
-                        </div>
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </section>
-    <p class="lead text-center text-muted">Danh sách sản phẩm</p>
     <div class="row">
         <?php
             if(isset($_GET['page'])){
@@ -201,7 +209,7 @@
                 $author='';
             }
             else{
-                $category="default";
+                $category="";
                 if(isset($_POST['Ibookname'])){
                     $bookname=$_POST['Ibookname'];
                 }
@@ -211,20 +219,40 @@
             }
             if(isset($_POST['Iminprice'])){
                 $minprice=$_POST['Iminprice'];
-            }
+            } else $minprice=0;
             if(isset($_POST['Imaxprice'])){
                 $maxprice=$_POST['Imaxprice'];
-            }
+            } else $maxprice=1000000000;
             include('loadcontent.php') ;
         ?>
     </div>
-        <br>
+    <br>
     <div class="row" style="text-align: center;">
         <nav aria-label="">
             <?php
-            $sqldemsach="select count(book_id) from tb_book";
+            $sqldemsach="select count(book_id) from tb_book where 1";
+            if(isset($category))
+            if($category!=''){
+                $sqldemsach .= " and book_category like '%$category%'";
+            }
+            if(isset($bookname))
+            if($bookname != ''){
+                $sqldemsach .= " and book_name like '%$bookname%'";
+            }
+            if(isset($author))
+            if($author !=''){
+                $sqldemsach .= " and book_author like '%$author%'";
+            }
+            if(isset($minprice))
+            if($minprice !=''){
+                $sqldemsach .= " and book_price > $minprice";
+            }
+            if(isset($maxprice))
+            if($maxprice !=''){
+                $sqldemsach .= " and book_price < $maxprice";
+            }
             $resultdemsach = mysqli_query($conn, $sqldemsach);
-            $laydong=mysqli_fetch_assoc($resultdemsach);
+            $laydong=mysqli_fetch_array($resultdemsach);
             $sosach =  $laydong['count(book_id)']; 
             $sotrang = (int)(1 + $sosach/8);
             $nextp = $page+1;

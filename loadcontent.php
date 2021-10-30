@@ -4,8 +4,8 @@
     $sql="select * from tb_book, tb_img where tb_book.img_id = tb_img.img_id";
 
     if(isset($category))
-    if($category!='default'){
-        $sql .= " and book_category like '$category'";
+    if($category!=''){
+        $sql .= " and book_category like '%$category%'";
     }
     if(isset($bookname))
     if($bookname != ''){
@@ -13,7 +13,7 @@
     }
     if(isset($author))
     if($author !=''){
-        $sql .= " and book_author = '$author'";
+        $sql .= " and book_author like '%$author%'";
     }
     if(isset($minprice))
     if($minprice !=''){
@@ -28,9 +28,10 @@
         $tmp = 8*($page-1);
         $sql .= " limit $tmp,8";
     }
-
+    $ok=0;
     $result=mysqli_query($conn,$sql);
     while($row=mysqli_fetch_array($result)){
+        $ok=1;
     echo '<div class="col-sm-3" style="--bs-gutter-x: 5px;--bs-gutter-y: 5px;">';
     echo '    <div class="card" style="width: 100%; height: 100%;">';
     echo '        <br><div class="row">';
@@ -49,5 +50,8 @@
     echo '        </div>';
     echo '    </div>';
     echo '</div>';
+    }
+    if($ok==0){
+        echo '<h3 class="text-center">Không có sản phẩm nào</h3>';
     }
 ?>
