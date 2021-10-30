@@ -44,16 +44,16 @@
             $book_category = $_POST['book_category'];
             $book_author = $_POST['book_author'];
             $book_intro = $_POST['book_intro'];
+            $img_id = $_POST['tb_img.img_url'];
             $img_url = $_POST['img_url'];
             $img_alt=$_POST['img_alt'];
             $sql = "UPDATE tb_book SET book_name='$book_name',book_price='$book_price',
             book_quantity='$book_quantity',book_category='$book_category',book_author='$book_author',
             book_intro='$book_intro'WHERE book_id = $id";
             $result = mysqli_query($conn,$sql);
-            //$sql2="update tb_img set img_url='$img_url'";
-           // $result2 = mysqli_query($conn,$sql2);
+            $sql2="update tb_img set img_url='$img_url' where img_id='$img_id'";
+            $result2 = mysqli_query($conn,$sql2);
             header("location:listbook.php");
-            //echo "LOI";
 }
 
 ?>
