@@ -26,7 +26,7 @@ if(mysqli_num_rows($result)>0){
     echo '<td>'.$row["book_category"].'</td>';
     echo '<td>'.$row["book_author"].'</td>';
     echo '<td>'.$row["book_intro"].'</td>';
-    echo '<td><img src="../'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150"></td>';
+    echo '<td><img src="'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150"></td>';
     echo '
     <td><div class="row">
     <a href=editbook.php?id='.$row["book_id"].'><button class="btn btn-success w-100">Sửa</button></a>

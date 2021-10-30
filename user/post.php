@@ -33,11 +33,11 @@
                                     <input name="email" id="email" value="<?php echo $username; ?>" hidden="hidden">
                                     <div class="form-outline mb-2">
                                         <div class="form-outline mb-2">
-                                            <label class="form-label" for="pass">Nhập email</label>
+                                            <label class="form-label" for="email">Nhập email</label>
                                             <input type="email" id="email" name="email"
                                                 class="form-control form-control-lg" />
                                         </div>
-                                        <label class="form-label" for="txtPass2">Hãy điền vào đây</label>
+                                        <label class="form-label" for="cmt">Hãy điền vào đây</label>
                                         <input type="text" id="cmt" name="cmt" class="form-control form-control-lg" />
                                     </div>
                             </div>
