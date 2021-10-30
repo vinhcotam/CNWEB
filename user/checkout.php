@@ -80,6 +80,7 @@
 
 <!-- Checkout -->
 <section>
+<div>    
   <div class="d-flex align-items-start bg-light pb-4 pb-4" style="height: 400px;">
     <div class="col-md-6">
         <div class="billingdetail">
@@ -93,16 +94,16 @@
                 <tr>
                     <th scope="row">
                         <div class="form-outline">
-                            <label class="form-label" for="typeText">Họ và tên</label>
                             <input type="text" id="typeText" class="form-control" />
+                            <label class="form-label" for="typeText"><h6>Họ và tên</h6></label>
                         </div>
                         <div class="form-outline">
-                            <label class="form-label" for="typeText">Số điện thoại</label>
                             <input type="text" id="typeText" class="form-control" />
+                            <label class="form-label" for="typeText"><h6>Số điện thoại</h6></label>
                         </div>
                         <div class="form-outline">
-                            <label class="form-label" for="typeText">Địa chỉ</label>
                             <input type="text" id="typeText" class="form-control" />
+                            <label class="form-label" for="typeText"><h6>Địa chỉ</h6></label>
                         </div>
                     </th>
                 </tr>
@@ -129,7 +130,6 @@
             </table>
         </div>
     </div>
-
   <div class="col-md-6">
     <div class="product-checkout-details">
         <table class="table">
@@ -144,7 +144,7 @@
                         <div>
                             <a class="pull-left" href="book.php">
                                 <div class="product-info" style="text-align: center;">
-                                    <img width="80" src="../book-img/Co-tich-1.jpg" alt="">
+                                    <img width="90" src="../book-img/Co-tich-1.jpg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -205,6 +205,10 @@
         </table>
     </div>
   </div>
+</div> 
+    <div class="checkoutbutton bg-light pt-5 pb-2" style="text-align: center;">
+        <button type="button" class="btn btn-primary btn-lg">Tiến hành đặt hàng</button>
+    </div>
 </section>
 <!-- endCheckout -->
 
