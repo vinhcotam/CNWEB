@@ -83,7 +83,7 @@ Licensed under MIT
                             Tình trạng đơn hàng </a>
                     </li>
                     <li>
-                        <a href="checkstatus.php?id=<?php echo $username;?>" target="_blank">
+                        <a href="post.php?id=<?php echo $username;?>" target="_blank">
                         <i class="fas fa-comments"></i>Gửi ý kiến của bạn  </a>
                     </li>
                     <li>
