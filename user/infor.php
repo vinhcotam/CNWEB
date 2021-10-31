@@ -87,7 +87,7 @@ Licensed under MIT
                         <i class="fas fa-comments"></i>Gửi ý kiến của bạn  </a>
                     </li>
                     <li>
-                        <a href="../home.php" target="_blank">
+                        <a href="../home.php?username=<?php echo $username ?>" target="_blank">
                         <i class="fas fa-home"></i>Quay về trang chủ </a>
                     </li>
                     <li>

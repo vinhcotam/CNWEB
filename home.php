@@ -76,7 +76,7 @@
                     </ul>
 
                     <!-- Avatar -->
-                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="user/infor.php"
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="user/infor.php?username=<?php echo $username;?>"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <img src="./img/avatar1.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
                     </a>
