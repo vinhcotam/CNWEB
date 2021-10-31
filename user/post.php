@@ -13,16 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/infor.css">
     <title>Bạn muốn nói điều gì ?</title>
 </head>
 
 <body>
     <section class="vh-100 bg-image">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-            <div class="container h-100">
+            <div class="container h-100" style="padding-left: 15px;margin-left:auto;">
                 <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="col-12">
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Gửi lời nhắn đến hệ thống</h2>
@@ -45,6 +44,10 @@
                                 <button id="sbCmt" name="sbCmt" type="sumbit"
                                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Gửi</button>
                             </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="infor.php?username=<?php echo $username; ?>" type="sumbit"
+                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Quay về trang cá nhân</a>
+                            </div>
                             </form>
 
                         </div>
@@ -54,9 +57,10 @@
         </div>
     </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
