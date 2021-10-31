@@ -1,6 +1,13 @@
 <?php
-	session_start();
-		$book_id = $_GET['id'];
+		if(isset($_GET['username'])){
+            $username = $_GET['username'];
+        }
+        else{
+            echo '<script language="javascript">';
+            echo 'alert("Bạn cần đăng nhập để sử dụng tính năng này");';
+            echo 'window.close();';
+            echo '</script>';
+        }
 	include '../conf.php';
 ?>
 <!DOCTYPE html>
@@ -57,8 +64,8 @@
                     </a>
 
                     <!-- Notifications -->
-                    <a class="text-reset me-3 hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <a class="text-reset me-3 hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bell"></i>
                         <span class="badge rounded-pill badge-notification bg-danger"></span>
                     </a>
@@ -69,8 +76,8 @@
                     </ul>
 
                     <!-- Avatar -->
-                    <a class="d-flex align-items-center hidden-arrow" href="infor.php"
-                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="true">
+                    <a class="d-flex align-items-center hidden-arrow" href="infor.php" id="navbarDropdownMenuLink"
+                        role="button" data-mdb-toggle="dropdown" aria-expanded="true">
                         <i class="fas fa-user-circle" height="25" loading="lazy" style="color: black;"></i>
                     </a>
                 </div>
@@ -84,34 +91,48 @@
         <div class="shopping-cart mt-5">
             <table class="table">
                 <thead>
-                    <tr >
+                    <tr>
+                        <th scope='col'>Người nhận</th>
                         <th scope="col">Tên sách</th>
                         <th scope="col">Ảnh</th>
                         <th scope="col">Số Lượng</th>
+                        <th scope="col">Ngày đặt</th>
+                        <th scope="col">Địa chỉ nhận hàng</th>
                         <th scope="col">Giá</th>
                         <th scope="col">Thành tiền</th>
+                        <th scope="col">Tình trạng</th>
                         <th scope="col">Thao tác</th>
                     </tr>
                 </thead>
-                <?php
-                $sql="select * from tb_book,tb_img where tb_book.img_id=tb_img.img_id and book_id=$book_id";
-                $result=mysqli_query($conn,$sql);
-                while($row=mysqli_fetch_assoc($result)){              
-                ?>
                 <tbody>
-                    <?php
-                            echo '<tr>';    
-                                echo        '<td>'.$row["book_name"].'</td>';
-                                echo '<td><img src="../'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150"></td>';
-                                echo '<td >'.$_GET['qty'].'</td>';
-                                echo '<td >'.$row["book_price"].'</td>';
-                                echo '<td >'. $row["book_price"] * $_GET['qty'].'</td>';
-                                echo '<td >';
-                                echo    '<a href="delcart.php?id='.$book_id.'" type="button" class="btn btn-danger">Delete</a>';
-                                echo '</td>';
-                        echo '</tr>';
-                ?>
-                    <?php
+                <?php
+                echo $sql="select * from tb_receipt, tb_book, tb_img where tb_book.img_id = tb_img.img_id and tb_receipt.book_id = tb_book.book_id and user_email = '$username'";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
+                    echo '<tr>';
+                    echo '<td>'.$row['user_name'].'</td>';
+                    echo '<td>'.$row['book_name'].'</td>';
+                    echo '<td><img style="height: 160px;" src="'.$row['img_url'].'"></td>';
+                    echo '<td>'.$row['quantity'].'</td>';
+                    echo '<td>'.$row['date_buy'].'</td>';
+                    echo '<td>'.$row['address'].'</td>';
+                    echo '<td>'.$row['book_price'].'</td>';
+                    echo '<td>'.$row['total'].'</td>';
+                    if($row['status'] == '0'){
+                        echo '<td><p style="color: gray;">Chờ duyệt đơn</p></td>';
+                        echo '<td><a href="processcancelorder.php?id='.$row['receipt_id'].'"><button class="btn btn-danger">Hủy đơn</button></a></td>';
+                    }
+                    if($row['status'] == '1'){
+                        echo '<td><p class="text-warning">Chờ giao hàng</p></td>';
+                        echo '<td><a href="processcancelorder.php?id='.$row['receipt_id'].'"><button class="btn btn-danger">Hủy đơn</button></a></td>';
+                    }
+                    if($row['status'] == '2'){
+                        echo '<td><p style="color: green;">Đã nhận hàng</p></td>';
+                    }
+                    if($row['status'] == '3'){
+                        echo '<td><p style="color: red;">Đã hủy</p></td>';
+                    }
+                    echo '</tr>';
                 }
                 ?>
                 </tbody>
