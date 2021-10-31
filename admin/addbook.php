@@ -24,9 +24,9 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="category" class="col-sm-2 col-form-label">Thể loại</label>
+            <label for="book_category" class="col-sm-2 col-form-label">Thể loại</label>
             <div class="col-sm-10">
-                <select name="category" id="category">
+                <select name="book_category" id="book_category">
                     <?php
                             $sql = "SELECT * FROM tb_book ";
                             $result = mysqli_query($conn,$sql);

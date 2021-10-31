@@ -11,9 +11,10 @@
     include '../conf.php';
     $sql = "INSERT INTO tb_book (book_name, book_price, book_quantity, book_category, book_author,book_intro,img_id)
     VALUES ('$book_name','$book_price','$book_quantity','$book_category','$book_author','$book_intro','$img_id')";
+         $sql2="Insert into tb_img(img_id,img_url) values ('$img_id','$img_url')";
     $result=mysqli_query($conn,$sql);
-    // $sql2="Insert into tb_img values ('$img_id','$img_url')";
-    // $resul2t=mysqli_query($conn,$sql2);
+
+     $resul2t=mysqli_query($conn,$sql2);
     if($result>0){
         header("Location: listbook.php");
     }else{
