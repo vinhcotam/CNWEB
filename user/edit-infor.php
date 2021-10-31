@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="../css/infor-test.css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Thông tin cá nhân</title>
 </head>
@@ -94,13 +95,13 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
+                <a href="#" class="nav-link link-dark" aria-current="page">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
                 <i class="fas fa-address-book"></i> Thông tin tổng quát
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link link-dark">
+                <a href="#" class="nav-link active">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
                 <i class="fas fa-cog"></i> Chỉnh sửa tài khoản
                 </a>
@@ -127,13 +128,29 @@
         <div class="d-flex">
             <div class="col-md-2 flex-fill">
                 <img src="../img/avatar-1.jpg" style="width: 60%; float: center;" alt="">
+                <button type="button" class="btn btn-primary" style="margin-top: 15px; width: 60%;"><a href="" style="color: white; text-decoration: none;">Thay đổi ảnh đại diện</a></button> 
             </div>
             <div class="col-md-7 flex-fill">
-                <p>Họ & Tên: Lê Hoàng Dương</p>
-                <p>Ngày sinh: 01-01-2001</p>
-                <p>Giới tính: Nam</p>
-                <p>Số điện thoại: +84 xxx xxx xxx</p>
-                <p>Địa chỉ: Hà Nội</p>
+                <div>
+                    <p>Họ & Tên: Lê Hoàng Dương</p>
+                    <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Họ & Tên</a></button>
+                </div>
+                <div>
+                    <p>Ngày sinh: 01-01-2001</p>
+                    <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Ngày sinh</a></button>
+                </div>
+                <div>
+                    <p>Giới tính: Nam</p>
+                    <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Giới tính</a></button>
+                </div>
+                <div>
+                    <p>Số điện thoại: +84 xxx xxx xxx</p>
+                    <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Số điện thoại</a></button>
+                </div>
+                <div>
+                    <p>Địa chỉ: Hà Nội</p>
+                    <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Địa chỉ</a></button>
+                </div> 
             </div>
         </div>
     </div>
