@@ -59,7 +59,7 @@
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
                     <!-- Icon -->
-                    <a class="text-reset me-3" href="user/cart.php">
+                    <a class="text-reset me-3" href="user/cart.php?username=<?php echo $username?>">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
 
@@ -252,25 +252,24 @@
         ?>
             <ul class="pagination justify-content-center">
                 <li class="page-item <?php if($page==1) echo 'disabled';?>">
-                    <a class="page-link" href="home.php?page=<?php echo $prevp;?>">
-                        Trước</a>
+                    <a class="page-link" href="home.php?page=<?php echo $prevp;?>&username=<?php echo $username;?>">Trước</a>
                 </li>
                 <?php
                     for( $i=(int)1; $i<=$sotrang; $i++){
                         if($i==$page){
                             echo '<li class="page-item active" aria-current="page">
-                                 <a class="page-link" href="home.php?page='.$i.'">'.$i.'</a>
+                                 <a class="page-link" href="home.php?page='.$i.'&username='.$username.'">'.$i.'</a>
                                  </li>';
                         }
                         else{
                             echo '<li class="page-item">
-                                 <a class="page-link" href="home.php?page='.$i.'">'.$i.'</a>
+                                 <a class="page-link" href="home.php?page='.$i.'&username='.$username.'">'.$i.'</a>
                                  </li>';
                         }
                     }
                   ?>
                 <li class="page-item <?php if($page==$sotrang) echo 'disabled';?>">
-                    <a class="page-link" href="home.php?page=<?php echo $nextp;?>">Sau</a>
+                    <a class="page-link" href="home.php?page=<?php echo $nextp;?>&username=<?php echo $username;?>">Sau</a>
                 </li>
             </ul>
         </nav>
