@@ -2,10 +2,10 @@
 		if(isset($_GET['username'])){
             $username = $_GET['username'];
         }
-        else{
+        if($username==''){
             echo '<script language="javascript">';
             echo 'alert("Bạn cần đăng nhập để sử dụng tính năng này");';
-            echo 'window.close();';
+            echo 'history.back();';
             echo '</script>';
         }
 	include '../conf.php';
