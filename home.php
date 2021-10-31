@@ -77,8 +77,8 @@
 
                     <!-- Avatar -->
                     <a class="d-flex align-items-center hidden-arrow" href="infor.php"
-                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="true">
-                        <i class="fas fa-user-circle" height="25" loading="lazy" style="color: black;"></i>
+                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="true" style="color: black;">
+                        <i class="fas fa-user-circle" height="25" loading="lazy"></i>
                     </a>
                 </div>
             </div>
