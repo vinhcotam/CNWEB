@@ -29,9 +29,9 @@ if(mysqli_num_rows($result)>0){
     echo '<td><img src="'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150"></td>';
     echo '
     <td><div class="row">
-    <a href=editbook.php?id='.$row["book_id"].'><button class="btn btn-success w-100">Sửa</button></a>
+    <a href=editbook.php?book_id='.$row["book_id"].'><button class="btn btn-success w-100">Sửa</button></a>
     <br><br>
-     <a href=deletebook.php?id='.$row["book_id"].'><button class="btn btn-danger w-100">Xóa sách</button></a>
+     <a href=deletebook.php?book_id='.$row["book_id"].'><button class="btn btn-danger w-100">Xóa sách</button></a>
     </div></td>';
     }
 }
