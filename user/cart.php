@@ -41,17 +41,6 @@
                         <img src="../img/Logo.png" height="70" alt="Logo" loading="lazy" />
                     </a>
                     <!-- Left links -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../home.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Login.php">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../register.php">Đăng ký</a>
-                        </li>
-                    </ul>
                     <!-- Left links -->
                 </div>
                 <!-- Collapsible wrapper -->
@@ -88,6 +77,10 @@
 
     <!-- Table -->
     <div class="container-fluid">
+        <hr>
+        <div class="row" style="float: right;">  
+        <p onclick="location.reload();" style="font-size: 28px; color: green;">Làm mới  <i class="fas fa-sync-alt"></i></p>
+        </div>
         <div class="shopping-cart mt-5">
             <table class="table">
                 <thead>
@@ -106,7 +99,7 @@
                 </thead>
                 <tbody>
                 <?php
-                echo $sql="select * from tb_receipt, tb_book, tb_img where tb_book.img_id = tb_img.img_id and tb_receipt.book_id = tb_book.book_id and user_email = '$username'";
+                $sql="select * from tb_receipt, tb_book, tb_img where tb_book.img_id = tb_img.img_id and tb_receipt.book_id = tb_book.book_id and user_email = '$username'";
                 $result=mysqli_query($conn,$sql);
                 while($row=mysqli_fetch_array($result)){
                     echo '<tr>';
@@ -120,11 +113,11 @@
                     echo '<td>'.$row['total'].'</td>';
                     if($row['status'] == '0'){
                         echo '<td><p style="color: gray;">Chờ duyệt đơn</p></td>';
-                        echo '<td><a href="processcancelorder.php?id='.$row['receipt_id'].'"><button class="btn btn-danger">Hủy đơn</button></a></td>';
+                        echo '<td><a href="processcancelorder.php?id='.$row['receipt_id'].'&username='.$username.'"><button class="btn btn-danger">Hủy đơn</button></a></td>';
                     }
                     if($row['status'] == '1'){
                         echo '<td><p class="text-warning">Chờ giao hàng</p></td>';
-                        echo '<td><a href="processcancelorder.php?id='.$row['receipt_id'].'"><button class="btn btn-danger">Hủy đơn</button></a></td>';
+                        echo '<td><a href="processcancelorder.php?id='.$row['receipt_id'].'&username='.$username.'"><button class="btn btn-danger">Hủy đơn</button></a></td>';
                     }
                     if($row['status'] == '2'){
                         echo '<td><p style="color: green;">Đã nhận hàng</p></td>';
@@ -137,10 +130,6 @@
                 ?>
                 </tbody>
             </table>
-            <div class="checkout-button" style="text-align: center;">
-                <a href="checkout.php" class="btn btn-primary btn-lg active mt-2 mb-4" role="button"
-                    aria-pressed="true">Thanh Toán</a>
-            </div>
         </div>
     </div>
     <!-- endTable -->

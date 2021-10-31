@@ -12,7 +12,8 @@
 <main>
     <h2>Edit</h2>
     <?php
-        $sql="SELECT * FROM tb_book,tb_img WHERE book_id=$id and tb_book.img_id=tb_img.img_id";
+        $sql="SELECT * FROM tb_img,tb_book WHERE book_id=$id and tb_book.img_id=tb_img.img_id";
+        echo $sql;
         $res=mysqli_query($conn, $sql);
         if($res==true)
         {
@@ -25,7 +26,6 @@
                 $book_category = $row['book_category'];
                 $book_author = $row['book_author'];
                 $book_intro = $row['book_intro'];
-                $img_id = $row['img_id'];
                 $img_url = $row['img_url'];
                 $img_alt = $row['img_alt'];
                 
@@ -36,30 +36,9 @@
             }
         }
     ?>
-    <?php
-        if(isset($_POST["edit"])){
-            $book_name = $_POST['book_name'];
-            $book_price = $_POST['book_price'];
-            $book_quantity = $_POST['book_quantity'];
-            $book_category = $_POST['book_category'];
-            $book_author = $_POST['book_author'];
-            $book_intro = $_POST['book_intro'];
-            $img_id = $_POST['tb_img.img_id'];
-            $img_url = $_POST['img_url'];
-            $img_alt=$_POST['img_alt'];
-            $sql = "UPDATE tb_book SET book_name='$book_name',book_price='$book_price',
-            book_quantity='$book_quantity',book_category='$book_category',book_author='$book_author',
-            book_intro='$book_intro'WHERE book_id = $id";
-            $sql2="update tb_img set img_url='$img_url' where img_id='$img_id'";
-            $result = mysqli_query($conn,$sql);
-            $result2 = mysqli_query($conn,$sql2);
-            header("location:listbook.php");
-}
-
-?>
 
 
-    <form action="" method="POST">
+    <form action="process_editbook.php" method="POST">
         <label for="book_id" name="book_id">Mã: <?php echo $id; ?></label>
 
         <div class="mb-3">
@@ -84,7 +63,9 @@
         </div>
         <div class="mb-3">
             <label for="img_url" class="form-label">Hình ảnh</label>
-            <input type="text" hidden="hidden " value="<?php echo $row['img_id']; ?>">
+            <input type="text" name="img_id" hidden="hidden " value="<?php echo $row['img_id']; ?>">
+            <input type="text" name="img_alt" hidden="hidden " value="<?php echo $row['img_alt']; ?>">
+            <input type="text" name="book_id" hidden="hidden " value="<?php echo $row['book_id']; ?>">
             <?php echo '<img src="'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150">'; ?>
                 <label for="img_url" class="col-sm-2 col-form-label">Thay ảnh</label>
                     <input type="text" class="form-control" id="img_url" name="img_url">
