@@ -1,3 +1,8 @@
+<?php
+    include '../conf.php';
+        $user_email=$_GET['id'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,39 +26,38 @@
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Chỉnh sửa tài khoản</h2>
-
-                                <form action="checkpass.php" method="POST">
-
+                                <?php
+                                    $sql="select * from tb_user where user_email='$user_email'";
+                                    $result=mysqli_query($conn, $sql);
+                                    if( mysqli_num_rows($result)>0){
+                                        $row = mysqli_fetch_assoc($result);
+                                        $user_name=$row['user_name'];
+                                        $user_pass=$row['user_pass'];
+                                    }
+                                ?>
+                                <form action="process-editacc.php" method="POST">
+                                    <input  name="email" type="email" hidden="hidden" value="<?php echo $user_email; ?>">
                                     <div class="form-outline mb-2">
-                                    <label class="form-label" for="txtEmail">Nhập username cũ</label>
-                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />                                       
+                                    <label class="form-label" for="user_name">Tên người dùng</label>
+                                        <input type="text" id="user_name" name="user_name" class="form-control form-control-lg"
+                                        value="<?php echo $row['user_name']; ?>" />                                       
                                     </div>
 
                                     <div class="form-outline mb-2">
-                                    <label class="form-label" for="txtEmail">Nhập mật khẩu cũ</label>
-                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />                                       
+                                    <label class="form-label" for="pass">Nhập mật khẩu cũ</label>
+                                        <input type="password" id="pass" name="pass" class="form-control form-control-lg" />                                       
                                     </div>
-
                                     <div class="form-outline mb-2">
-                                    <label class="form-label" for="txtEmail">Nhập username mới</label>
-                                        <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />                                       
+                                    <label class="form-label" for="pass1">Nhập mật khẩu mới</label>
+                                        <input type="emapasswordil" id="pass1" name="pass1" class="form-control form-control-lg" />                                       
                                     </div>
-
-                                    <div class="form-outline mb-2">
-                                    <label class="form-label" for="txtPass">Nhập mật khẩu mới</label>
-                                        <input type="password" id="txtPass" name="txtPass"  class="form-control form-control-lg" />                                       
+                                    <label class="form-label" for="pass2">Nhập lại mật khẩu mới</label>
+                                        <input type="emapasswordil" id="pass2" name="pass2" class="form-control form-control-lg" />                                       
                                     </div>
-                                    <p class="text-center text-muted mt-4 mb-0">Bạn không nhớ mật khẩu ? <a
-                                            href="forgotpass.php" class="fw-bold text-body"><u>Nhấn vào đây</u></a>
-                                    </p>
                                     <div class="d-flex justify-content-center mt-4">
-                                        <button type="submit" name="sbLogin"
+                                        <button type="submit" name="sbChange"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Lưu thay đổi</button>
                                     </div>
-
-                                    <p class="text-center text-muted mt-4 mb-0">Bạn chưa có tài khoản <a
-                                            href="register.php" class="fw-bold text-body"><u>Đăng ký tại đây</u></a>
-                                    </p>
                                 </form>
 
                             </div>

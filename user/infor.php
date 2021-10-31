@@ -73,7 +73,7 @@ Licensed under MIT
                             Thông tin tổng quát </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="edit-account.php?id=<?php echo $username;?>">
                             <i class="glyphicon glyphicon-user"></i>
                             Chỉnh sửa tài khoản </a>
                     </li>
