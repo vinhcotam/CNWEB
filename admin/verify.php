@@ -1,9 +1,9 @@
 <?php
     $receipt_id=$_GET['id'];
     include '../conf.php';
-    $sql="update tb_receipt set status = 1";
+    $sql="update tb_receipt set status = 1 where receipt_id='$receipt_id' ";
     $result=mysqli_query($conn,$sql);
-    header("location:receipt.php.php");
+    header("location:receipt.php");
 
 
 ?>

@@ -40,13 +40,13 @@
                                         <input type="text" id="cmt" name="cmt" class="form-control form-control-lg" />
                                     </div>
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <button id="sbCmt" name="sbCmt" type="sumbit"
-                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Gửi</button>
+                            <div class="col-md-12" style="text-align: center;">
+                                <button id="sbCmt" name="sbCmt" type="sumbit" class="btn btn-success ">Gửi</button>
                             </div>
-                            <div class="d-flex justify-content-center">
+                            <div class="col-md-12" style="text-align: center;">
                                 <a href="infor.php?username=<?php echo $username; ?>" type="sumbit"
-                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Quay về trang cá nhân</a>
+                                    class="btn btn-primary ">Quay về trang
+                                    cá nhân</a>
                             </div>
                             </form>
 
