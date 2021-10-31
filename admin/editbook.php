@@ -44,14 +44,14 @@
             $book_category = $_POST['book_category'];
             $book_author = $_POST['book_author'];
             $book_intro = $_POST['book_intro'];
-            $img_id = $_POST['tb_img.img_url'];
+            $img_id = $_POST['tb_img.img_id'];
             $img_url = $_POST['img_url'];
             $img_alt=$_POST['img_alt'];
             $sql = "UPDATE tb_book SET book_name='$book_name',book_price='$book_price',
             book_quantity='$book_quantity',book_category='$book_category',book_author='$book_author',
             book_intro='$book_intro'WHERE book_id = $id";
-            $result = mysqli_query($conn,$sql);
             $sql2="update tb_img set img_url='$img_url' where img_id='$img_id'";
+            $result = mysqli_query($conn,$sql);
             $result2 = mysqli_query($conn,$sql2);
             header("location:listbook.php");
 }
@@ -84,7 +84,11 @@
         </div>
         <div class="mb-3">
             <label for="img_url" class="form-label">Hình ảnh</label>
+            <input type="text" hidden="hidden " value="<?php echo $row['img_id']; ?>">
             <?php echo '<img src="'.$row["img_url"].'" alt="'.$row["img_alt"].'"  height="150">'; ?>
+                <label for="img_url" class="col-sm-2 col-form-label">Thay ảnh</label>
+                    <input type="text" class="form-control" id="img_url" name="img_url">
+            </div>
         </div>
         <div class="mb-3">
             <label for="book_category" class="col-sm-2 col-form-label">Thể loại</label>
