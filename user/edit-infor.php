@@ -126,29 +126,29 @@
             <span class="info-title"><h4>Thông tin cá nhân</h4></span>
         </div>
         <div class="d-flex">
-            <div class="col-md-2 flex-fill">
+            <div class="col-md-2 flex-fill"">
                 <img src="../img/avatar-1.jpg" style="width: 60%; float: center;" alt="">
-                <button type="button" class="btn btn-primary" style="margin-top: 15px; width: 60%;"><a href="" style="color: white; text-decoration: none;">Thay đổi ảnh đại diện</a></button> 
+                <button type="button" class="btn btn-primary mt-1" style="width: 60%;><a href="" style="color: white; text-decoration: none;">Thay đổi Ảnh đại diện</a></button>
             </div>
             <div class="col-md-7 flex-fill">
                 <div>
-                    <p>Họ & Tên: Lê Hoàng Dương</p>
+                    <p>Họ & Tên: <input class="input " type="search" name="fullName" maxlength="128" placeholder="Thêm họ tên" value="Lê Hoàng Dương"></p>
                     <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Họ & Tên</a></button>
                 </div>
-                <div>
-                    <p>Ngày sinh: 01-01-2001</p>
+                <div style="margin-top: 15px;">
+                    <p>Ngày sinh: <input class="input " type="search" name="fullName" maxlength="128" placeholder="Thêm Ngày sinh" value="01-01-2001"></p>
                     <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Ngày sinh</a></button>
                 </div>
-                <div>
-                    <p>Giới tính: Nam</p>
+                <div style="margin-top: 15px;">
+                    <p>Giới tính: <input class="input " type="search" name="fullName" maxlength="128" placeholder="Thêm Ngày sinh" value="Nam"></p>
                     <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Giới tính</a></button>
                 </div>
-                <div>
-                    <p>Số điện thoại: +84 xxx xxx xxx</p>
+                <div style="margin-top: 15px;">
+                    <p>Số điện thoại: <input class="input " type="search" name="fullName" maxlength="128" placeholder="Thêm Ngày sinh" value="+84 xxx xxx xxx"></p>
                     <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Số điện thoại</a></button>
                 </div>
-                <div>
-                    <p>Địa chỉ: Hà Nội</p>
+                <div style="margin-top: 15px;">
+                    <p>Địa chỉ: <input class="input " type="search" name="fullName" maxlength="128" placeholder="Thêm Ngày sinh" value="Hà Nội"></p>
                     <button type="button" class="btn btn-primary"><a href="" style="color: white; text-decoration: none;">Thay đổi Địa chỉ</a></button>
                 </div> 
             </div>
