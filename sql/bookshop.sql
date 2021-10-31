@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2021 lúc 10:55 AM
+-- Thời gian đã tạo: Th10 31, 2021 lúc 03:58 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -44,6 +44,7 @@ CREATE TABLE `tb_book` (
 
 INSERT INTO `tb_book` (`book_id`, `book_name`, `book_price`, `book_quantity`, `book_category`, `book_author`, `book_intro`, `img_id`) VALUES
 (1, 'Hoàng tử bé', 200, 120, 'Cổ tích', 'Antoine De Saint-Expéry', 'được xuất bản năm 1943, là tiểu thuyết nổi tiếng nhất của nhà văn và phi công Pháp Antoine de Saint-Exupéry. Ông đã thuê ngôi biệt thự The Bevin House ở Asharoken, Long Island, New York trong khi viết tác phẩm này.', 'cotich1'),
+(2, 'Thám tử lừng danh Conan tập 67', 110, 321, 'Trinh thám', 'Gosho Aoyama', 'Conan và mọi người chứng kiến một vụ đánh bom ở trung tâm mua sắm. Tại hiện trưởng, lại thấy cả bóng dáng Akai Shuichi, Okiya Subaru và cả Gin!! Trong tình thế ngàn cân treo sợi tóc, Conan sẽ giải quyết ra sao? Trong tập này còn có ', 'conan67'),
 (3, 'Kafka bên bờ biển', 150, 100, 'Tiểu thuyết', 'Haruki Murakami', 'Kafka bên bờ biển (海辺のカフカ Umibe no Kafuka?) là tiểu thuyết của nhà văn người Nhật Bản Haruki Murakami (2002). Sự xuất sắc của tác phẩm này đã giúp ông được trao giải thưởng văn học Franz Kafka năm 2006[1]. Bản dịch tiếng Việt của Dương Tường được hoàn tất', 'tieuthuyet1'),
 (4, 'Phía sau nghi can', 500, 340, 'Trinh thám', 'Higashino Keigo', 'Phía sau nghi can X (容疑者Xの献身 Yōgisha Ekkusu no Kenshin) là một bộ tiểu thuyết được viết vào năm 2005 bởi Higashino Keigo, cuốn thứ ba trong seri Thám tử Galileo (tức nhân vật Manabu Yukawa) và đây là tác phẩm thành công nhất của ông từ trước đến nay. Cuốn', 'trinhtham1'),
 (5, 'Truyện cổ Andersen', 650, 1000, 'Cổ tích', 'Hans Christian Andersen', 'Truyện Cổ Andersen đi theo tuổi thơ mỗi đứa trẻ, cùng lớn lên với mỗi người, và ở mỗi độ tuổi khác nhau, khi đọc Andersen lại có một cảm nhận mới mẻ, tinh tế hơn, sâu sắc hơn.', 'cotich2'),
@@ -51,11 +52,11 @@ INSERT INTO `tb_book` (`book_id`, `book_name`, `book_price`, `book_quantity`, `b
 (7, 'Lắng nghe hơi thở', 150, 120, 'Tiểu thuyết', 'Lưu Đình Long', 'Lắng nghe gió hát (風の歌を聴け Kaze no uta wo kike?) là tên tiểu thuyết đầu tay phát hành năm 1979 của nhà văn Nhật Bản Murakami Haruki. Lắng nghe gió hát xuất hiện lần đầu trong số tháng 6 năm 1979 của Gunzo (một trong những tạp chí văn học có ảnh hưởng nhất ', 'tieuthuyet2'),
 (8, 'Grimgar tập 1', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lighnovel1'),
 (9, 'Grimgar tập 2', 500, 350, 'Light novel', 'Ao Jyumonji', 'là một light novel của Nhật Bản do Ao Jūmonji viết và Eiri Shirai vẽ minh họa. Câu chuyện kể về một nhóm người đột nhiên thấy mình trong một thế giới tưởng tượng không có ký ức từ trước khi họ đến, và kể về những cuộc đấu tranh của họ để tồn tại.', 'lightnovel2'),
-(18, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12', 18, 33, 'Light novel , Học đường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 12\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn k', 'oregairu12'),
-(19, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 6.5', 18, 63, 'Light Novel, Đời thường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 6.5\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn ', 'oregairu6.5'),
-(15, 'Date A Live Tập 12 Itsuka Disaster', 17, 109, 'Tình cảm, Siêu nhiên', 'Koushi Tachibana', 'Date A Live - Tập 12\r\n\r\nNgày 1 tháng 2, khi cái lạnh thấu xương tìm đến với thành phố Tengu, Itsuka Shidou đột nhiên vượt ngoài tầm kiểm soát. Cậu lần lượt phá các kỷ lục thế giới trong các bộ môn về thể chất, hơn nữa còn làm vỡ cửa kính và nứt tường chỉ ', 'datealive12'),
 (14, 'Sách Giáo Khoa Bộ Lớp 10 - Sách Bài Học (Bộ 14 Cuốn)', 10, 800, 'Học tập', 'Bộ Giáo Dục Và Đào Tạo', 'Sách Giáo Khoa Bộ Lớp 10 - Sách Bài Học (Bộ 14 Cuốn) (2021)\r\n\r\nBao Gồm:\r\n\r\nSTT	Tên sản phẩm\r\n1	Giáo dục Quốc phòng - An ninh 10\r\n2	Đại số 10\r\n3	Hình học 10\r\n4	Vật lí 10\r\n5	Hoá học 10\r\n6	Sinh học 10\r\n7	Công nghệ 10 - Nông, lâm, ngư nghiệp, tạo lập doanh ng', 'sgk10full'),
-(2, 'Thám tử lừng danh Conan tập 67', 11, 321, 'Trinh thám', 'Gosho Aoyama', 'Conan và mọi người chứng kiến một vụ đánh bom ở trung tâm mua sắm. Tại hiện trưởng, lại thấy cả bóng dáng Akai Shuichi, Okiya Subaru và cả Gin!! Trong tình thế ngàn cân treo sợi tóc, Conan sẽ giải quyết ra sao? Trong tập này còn có \"Sát nhân Goth - Loli -', 'conan67');
+(15, 'Date A Live Tập 12 Itsuka Disaster', 17, 109, 'Tình cảm, Siêu nhiên', 'Koushi Tachibana', 'Date A Live - Tập 12\r\n\r\nNgày 1 tháng 2, khi cái lạnh thấu xương tìm đến với thành phố Tengu, Itsuka Shidou đột nhiên vượt ngoài tầm kiểm soát. Cậu lần lượt phá các kỷ lục thế giới trong các bộ môn về thể chất, hơn nữa còn làm vỡ cửa kính và nứt tường chỉ ', 'datealive12'),
+(18, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 12', 18, 32, 'Light novel , Học đường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 12Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn k', 'oregairu12'),
+(19, 'Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm tập 6.5', 18, 63, 'Light Novel, Đời thường', 'Wataru WATARI', 'Chuyện Tình Thanh Xuân Bi Hài Của Tôi Quả Nhiên Là Sai Lầm - Tập 6.5\r\n\r\nChuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm. (tên gốc: Yahari Ore no Seishun Rabukome wa Machigatteiru., gọi tắt là Oregairu), là một trong những series light novel ăn ', 'oregairu6.5'),
+(23, 'test', 550, 1, 'Học tập', 'test', 'test', 'ht1');
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,8 @@ INSERT INTO `tb_img` (`img_id`, `img_url`, `img_alt`) VALUES
 ('sgk10full', 'https://cdn0.fahasa.com/media/catalog/product/cache/2/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/3/3/3300000001135.jpg', 'Trọn bộ sách giáo khoa lớp 10'),
 ('tieuthuyet1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_195509_1_32831.jpg', 'Kafka bên bờ biển'),
 ('tieuthuyet2', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_234633.jpg', 'Lắng nghe hơi thở'),
-('trinhtham1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187738.jpg', 'Phía sau nghi can');
+('trinhtham1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/400x400/9df78eab33525d08d6e5fb8d27136e95/i/m/image_187738.jpg', 'Phía sau nghi can'),
+('ht1', 'https://cdn0.fahasa.com/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/i/m/image_180164_1_43_1_57_1_4_1_2_1_210_1_29_1_98_1_25_1_21_1_5_1_3_1_18_1_18_1_45_1_26_1_32_1_14_1_1236.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -99,6 +101,15 @@ CREATE TABLE `tb_post` (
   `user_email` varchar(100) DEFAULT NULL,
   `comment` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_post`
+--
+
+INSERT INTO `tb_post` (`post_id`, `user_email`, `comment`) VALUES
+(1, 'vinhcotam04052001@gmail.com', 'mong test thành công'),
+(2, 'vinhcotam04052001@gmail.com', 'mong test thành công111111'),
+(3, 'vinhcotam04052001@gmail.com', 'mong test thành công111111111111');
 
 -- --------------------------------------------------------
 
@@ -146,6 +157,12 @@ INSERT INTO `tb_user` (`user_name`, `user_email`, `user_pass`, `user_status`, `u
 --
 
 --
+-- Chỉ mục cho bảng `tb_book`
+--
+ALTER TABLE `tb_book`
+  ADD PRIMARY KEY (`book_id`);
+
+--
 -- Chỉ mục cho bảng `tb_post`
 --
 ALTER TABLE `tb_post`
@@ -162,10 +179,16 @@ ALTER TABLE `tb_user`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `tb_book`
+--
+ALTER TABLE `tb_book`
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT cho bảng `tb_post`
 --
 ALTER TABLE `tb_post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
