@@ -56,14 +56,6 @@
                             Comment của người dùng
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#people-circle"></use>
-                            </svg>
-                            Bảng
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
