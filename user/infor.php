@@ -78,7 +78,7 @@ Licensed under MIT
                             Chỉnh sửa tài khoản </a>
                     </li>
                     <li>
-                        <a href="checkstatus.php?id=<?php echo $username;?>" target="_blank">
+                        <a href="cart.php?username=<?php echo $username;?>" target="_blank">
                             <i class="glyphicon glyphicon-ok"></i>
                             Tình trạng đơn hàng </a>
                     </li>

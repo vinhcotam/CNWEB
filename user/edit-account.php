@@ -36,35 +36,50 @@
                                     }
                                 ?>
                                 <form action="process-editacc.php" method="POST">
-                                    <input  name="email" type="email" hidden="hidden" value="<?php echo $user_email; ?>">
+                                    <input name="email" type="email" hidden="hidden" value="<?php echo $user_email; ?>">
                                     <div class="form-outline mb-2">
-                                    <label class="form-label" for="user_name">Tên người dùng</label>
-                                        <input type="text" id="user_name" name="user_name" class="form-control form-control-lg"
-                                        value="<?php echo $row['user_name']; ?>" />                                       
+                                        <label class="form-label" for="user_name">Tên người dùng</label>
+                                        <input type="text" id="user_name" name="user_name"
+                                            class="form-control form-control-lg"
+                                            value="<?php echo $row['user_name']; ?>" />
                                     </div>
 
                                     <div class="form-outline mb-2">
-                                    <label class="form-label" for="pass">Nhập mật khẩu cũ</label>
-                                        <input type="password" id="pass" name="pass" class="form-control form-control-lg" />                                       
+                                        <label class="form-label" for="pass">Nhập mật khẩu cũ</label>
+                                        <input type="password" id="pass" name="pass"
+                                            class="form-control form-control-lg" />
                                     </div>
                                     <div class="form-outline mb-2">
-                                    <label class="form-label" for="pass1">Nhập mật khẩu mới</label>
-                                        <input type="emapasswordil" id="pass1" name="pass1" class="form-control form-control-lg" />                                       
+                                        <label class="form-label" for="pass1">Nhập mật khẩu mới</label>
+                                        <input type="emapasswordil" id="pass1" name="pass1"
+                                            class="form-control form-control-lg" />
                                     </div>
                                     <label class="form-label" for="pass2">Nhập lại mật khẩu mới</label>
-                                        <input type="emapasswordil" id="pass2" name="pass2" class="form-control form-control-lg" />                                       
-                                    </div>
-                                    <div class="d-flex justify-content-center mt-4">
-                                        <button type="submit" name="sbChange"
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Lưu thay đổi</button>
-                                    </div>
-                                </form>
-
+                                    <input type="emapasswordil" id="pass2" name="pass2"
+                                        class="form-control form-control-lg" />
                             </div>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button type="submit" name="sbChange"
+                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Lưu thay
+                                    đổi</button>
+                            </div>
+                            <script>
+                            // function checkpass() {
+                            //     if (document.getElementById('pass').value ==
+                            //         document.getElementById('txtPass2').value) {
+                            //         document.getElementById('sbNew').disabled = false;
+                            //     } else {
+                            //         document.getElementById('sbNew').disabled = true;
+                            //     }
+                            // }
+                            // </script>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
