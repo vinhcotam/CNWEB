@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row" style="min-height:1000px;">
         <div class="col-md">
-            <div class="container" style="margin:0px; padding:0px;">
+            <div class="container-fluid" style="margin:0px; padding:0px;">
                 <table class="table">
                     <thead>
                         <tr>
@@ -45,10 +45,13 @@
                                         $tt="Đã xác nhận và đang giao";
                                     }else if($row['status']==2){
                                         $tt="Đã giao";
+                                    }else if($row['status']==3){
+                                        $tt="Đã hủy đơn hàng";
                                     }
                                     echo '<td>'.$tt.'</td>';
                                     echo '<td><a href="verify.php?id='.$row['receipt_id'].'" class="btn btn-primary">Xác nhận đơn hàng</a></td>';
-                                    echo '<td><a href="delreceipt.php?id='.$row['receipt_id'].'" class="btn btn-primary">Hủy đơn hàng</a></td>';
+                                    echo '<td><a href="donereceipt.php?id='.$row['receipt_id'].'" class="btn btn-warning">Chuyển hàng thành công</a></td>';
+                                    echo '<td><a href="delreceipt.php?id='.$row['receipt_id'].'" class="btn btn-danger">Hủy đơn hàng</a></td>';
                                     echo '</tr>';   
                                         }
                                     }

@@ -23,10 +23,16 @@
             header("Location:user/infor.php?username=$useremail"); 
         }
         else{
-            echo 'mat khau khong khop';
+            echo '<script language="javascript">';
+            echo 'alert("Bạn đã nhập sai mật khẩu"); history.back();';
+            echo '</script>';
+            //header('Location:login.php');
         }
     }else{
-        echo 'email khong ton tai';
+     //   echo 'email khong ton tai';
+        echo '<script language="javascript">';
+        echo 'alert("Email không tồn tại"); history.back();';
+        echo '</script>';
     }
 
 ?>
