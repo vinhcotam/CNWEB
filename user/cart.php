@@ -65,7 +65,7 @@
                     </ul>
 
                     <!-- Avatar -->
-                    <a class="d-flex align-items-center hidden-arrow" href="infor.php" id="navbarDropdownMenuLink"
+                    <a class="d-flex align-items-center hidden-arrow" href="infor.php?username=<?php echo $username;?>" id="navbarDropdownMenuLink"
                         role="button" data-mdb-toggle="dropdown" aria-expanded="true">
                         <i class="fas fa-user-circle" height="25" loading="lazy" style="color: black;"></i>
                     </a>
