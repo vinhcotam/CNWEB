@@ -23,7 +23,7 @@
                 <input type="number" class="form-control" id="book_quantity" name="book_quantity">
             </div>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="book_category" class="col-sm-2 col-form-label">Thể loại</label>
             <div class="col-sm-10">
                 <select name="book_category" id="book_category">
@@ -37,6 +37,12 @@
                             }
                         ?>
                 </select>
+            </div>
+        </div> -->
+        <div class="form-group row">
+            <label for="book_category" class="col-sm-2 col-form-label">Thể loại</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="book_category" name="book_category">
             </div>
         </div>
         <div class="form-group row">

@@ -64,7 +64,7 @@
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
                     <!-- Icon -->
-                    <a class="text-reset me-3" href="cart.php">
+                    <a class="text-reset me-3" href="#">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
 
@@ -81,13 +81,13 @@
                     </ul>
 
                     <!-- Avatar -->
-                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="./user/infor.php"
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="../user/infor.php?username=<?php echo $username;?>"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <img src="../img/avatar1.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#">Hồ sơ của tôi</a>
+                            <a class="dropdown-item" href="infor.php?username=<?php echo $username;?>">Hồ sơ của tôi</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">Logout</a>

@@ -43,7 +43,7 @@
     echo '            <div class="col-1"></div>';
     echo '        </div>';
     echo '        <div class="card-body">';
-    echo '            <h5><a class="card-title " style="text-decoration: none; color: black;" href="book.php?book_id='.$row['book_id'].'">'.$row['book_name'].'</a></h5>';
+    echo '            <h5><a class="card-title " style="text-decoration: none; color: black;" href="book.php?book_id='.$row['book_id'].'&username='.$username.'">'.$row['book_name'].'</a></h5>';
     echo '            <p class="card-text" >'.$row['book_author'].'</p>';
     echo '            <div class="row" ><h6 class="card-text position-absolute bottom-0 start-0" style="color: red; ">'.$row['book_price'].'$</h6>';
     echo '            <p class="card-text position-absolute bottom-0 start-50"" style="color: green;">Còn: '.$row['book_quantity'].'</p></div>';
