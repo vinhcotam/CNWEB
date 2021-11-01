@@ -1,32 +1,31 @@
 <?php
     include '../conf.php';
     if(isset($_POST["sbChange"])){
-        $user_email=$_POST['email'];
-        $user_name=$_POST['user_name'];
-        $pass=md5($_POST['pass']);
-        echo $pass;
-        $pass1=$_POST['pass1'];
-        $pass2=$_POST['pass2'];
-        if($user_name=='' ||$pass1 =='' ||$pass2==''||$pass=''){
-            echo "Hãy nhập đầy đủ thông tin";
+        $new_password = $_POST['pass1'];
+        $new_username = $_POST['user_name'];
+        $useremail = $_POST['user_email'];
+        $old_password= $_POST['pass'];
+    }
+    $sqlold="select * from tb_user where user_email = '$useremail'";
+    $resultold = mysqli_query($conn, $sqlold);
+    $rowold = mysqli_fetch_assoc($resultold);
+    $old_password_hash = $rowold['user_pass'];
+    if(password_verify($old_password,$old_password_hash)){
+        $new_password_hash= password_hash($new_password,PASSWORD_DEFAULT);
+        $sql = "update tb_user set user_pass ='$new_password_hash', user_name = '$new_username' where user_email = '$useremail'";
+        $result = mysqli_query($conn, $sql);
+        if($result>0){
+            echo '<script language="javascript">';
+            echo 'alert("Đổi mật khẩu thành công");
+            setTimeout(function(){
+            }, 5000); ';
+            echo '</script>';
+            header('location:../login.php');
         }
-        else{
-             $sql="select * from tb_user where user_email='$user_email' and user_pass='$pass'";
-             echo $sql;
-             
-             $result=mysqli_query($conn,$sql);
-             if(mysqli_num_rows($result)==0){
-                 echo 'K đúng mật khẩu';
-             }else{
-
-                echo 'Khớp mật khẩu';
-                // $pass_hash=password_hash($pass1,PASSWORD_DEFAULT);
-                // $sql2="update tb_user set user_name ='$user_name',user_pass='$pass_hash' where user_email='$user_email'";
-                // $result2=mysqli_query($conn,$sql2);
-                // echo "Đổi thành công";
-                // header("Location:../login.php");
-            // }   
-        }
-}
+    }
+    else{
+        echo '<script language="javascript">';
+        echo 'alert("Bạn đã nhập sai mật khẩu cũ"); history.back();';
+        echo '</script>';
     }
 ?>

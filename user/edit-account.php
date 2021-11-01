@@ -32,11 +32,11 @@
                                     if( mysqli_num_rows($result)>0){
                                         $row = mysqli_fetch_assoc($result);
                                         $user_name=$row['user_name'];
-                                        $user_pass=$row['user_pass'];
+                                        $user_pass_hash=$row['user_pass'];
                                     }
                                 ?>
                                 <form action="process-editacc.php" method="POST">
-                                    <input name="email" type="email" hidden="hidden" value="<?php echo $user_email; ?>">
+                                    <input name="user_email" type="email" hidden="hidden" value="<?php echo $user_email; ?>">
                                     <div class="form-outline mb-2">
                                         <label class="form-label" for="user_name">Tên người dùng</label>
                                         <input type="text" id="user_name" name="user_name"
@@ -51,28 +51,38 @@
                                     </div>
                                     <div class="form-outline mb-2">
                                         <label class="form-label" for="pass1">Nhập mật khẩu mới</label>
-                                        <input type="emapasswordil" id="pass1" name="pass1"
+                                        <input type="emapasswordil" onkeyup="checkpass();" id="pass1" name="pass1"
                                             class="form-control form-control-lg" />
                                     </div>
                                     <label class="form-label" for="pass2">Nhập lại mật khẩu mới</label>
-                                    <input type="emapasswordil" id="pass2" name="pass2"
+                                    <input type="emapasswordil" onkeyup="checkpass();" id="pass2" name="pass2"
                                         class="form-control form-control-lg" />
+                            <p id = "warning"></p>
                             </div>
                             <div class="d-flex justify-content-center mt-4">
-                                <button type="submit" name="sbChange"
+                                <button type="submit" id="sbChange" name="sbChange" disabled
                                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Lưu thay
                                     đổi</button>
                             </div>
                             <script>
-                            // function checkpass() {
-                            //     if (document.getElementById('pass').value ==
-                            //         document.getElementById('txtPass2').value) {
-                            //         document.getElementById('sbNew').disabled = false;
-                            //     } else {
-                            //         document.getElementById('sbNew').disabled = true;
-                            //     }
-                            // }
-                            // </script>
+                            function checkpass() {
+                                var warning = document.getElementById('warning');
+                                if(document.getElementById('pass1').value ==''){
+                                    document.getElementById('sbChange').disabled = true;
+                                    warning.innerHTML = 'Mật khẩu không được bỏ trống';
+                                }
+                                else if (document.getElementById('pass1').value ==
+                                    document.getElementById('pass2').value) {
+                                    document.getElementById('sbChange').disabled = false;
+                                    warning.innerHTML = '';
+                                }
+                                else {
+                                    document.getElementById('sbChange').disabled = true;
+                                    warning.innerHTML = 'Nhập lại sai';
+                                }
+                                
+                            }
+                            </script>
                             </form>
 
                         </div>
@@ -88,6 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </body>
 
 </html>

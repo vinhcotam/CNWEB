@@ -76,6 +76,9 @@
                     </ul>
 
                     <!-- Avatar -->
+                    <?php
+                    $_SESSION['loginOK'] = $username;
+                    ?>
                     <a class="d-flex align-items-center hidden-arrow" href="user/infor.php?username=<?php echo $username;?>"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="true" style="color: black;">
                         <i class="fas fa-user-circle" height="25" loading="lazy"></i>
