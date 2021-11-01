@@ -4,10 +4,10 @@
         }
         if($username==''){
             echo '<script language="javascript">';
-            echo 'alert("Bạn cần đăng nhập để sử dụng tính năng này");';
-            echo 'history.back();';
+            echo 'alert("Bạn cần đăng nhập để sử dụng tính năng này"); history.back();';
             echo '</script>';
         }
+           
 	include '../conf.php';
 ?>
 <!DOCTYPE html>
