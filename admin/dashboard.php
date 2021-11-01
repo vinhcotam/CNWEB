@@ -84,6 +84,7 @@
                                 <tr>
                                     <th scope="col">Tên khách hàng</th>
                                     <th scope="col">Địa chỉ email</th>
+                                    <th scope="col">Trạng thái tài khoản</th>
                                 </tr>
                             </thead>
 
@@ -101,6 +102,12 @@
                             echo '<tr>';
                             echo '<td>'.$row['user_name'].'</td>';
                             echo '<td>'.$row['user_email'].'</td>';
+                            $tt="Chưa kích hoạt";
+                            if($row['user_status']==true){
+                                $tt="Đã kích hoạt";
+                                 
+                            }
+                            echo '<td>'.$tt.'</td>';   
                             echo '</tr>';   
                         }
                     }
