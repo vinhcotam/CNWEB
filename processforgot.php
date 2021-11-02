@@ -10,7 +10,9 @@
     //echo $sql;
     $result=mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)<=0){
-        echo 'email Khong ton tai';
+        echo '<script language="javascript">';
+        echo 'alert("Email không tồn tại"); history.back();';
+        echo '</script>';
     }
     else{
         $code=md5(uniqid(rand(),true));

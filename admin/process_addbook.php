@@ -18,7 +18,9 @@
     if($result>0){
         header("Location: listbook.php");
     }else{
-        echo "Loi";
+        echo '<script language="javascript">';
+        echo 'alert("Không thêm được sách"); history.back();';
+        echo '</script>';
     }
     mysqli_close($conn);
 ?>

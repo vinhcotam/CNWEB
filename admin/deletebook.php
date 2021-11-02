@@ -10,7 +10,9 @@
     if($result>0){
         header("Location: listbook.php");
     }else{
-        echo "Loi";
+        echo '<script language="javascript">';
+        echo 'alert("Xóa thất bại"); history.back();';
+        echo '</script>';
     }
     mysqli_close($conn);
 ?>

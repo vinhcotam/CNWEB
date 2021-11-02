@@ -9,7 +9,9 @@
     if($result>0){
         header("Location: infor.php?username=$user_email");
     }else{
-        echo "Loi";
+        echo '<script language="javascript">';
+        echo 'alert("Lỗi !!!"); history.back();';
+        echo '</script>';
     }
     mysqli_close($conn);
 ?>

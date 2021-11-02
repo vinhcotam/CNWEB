@@ -15,7 +15,9 @@
         echo "<a href='login.php'>Nhấn vào đây để về trang đăng nhập</a>";
     }
     else{
-       echo 'Không đổi được mật khẩu';
+        echo '<script language="javascript">';
+        echo 'alert("Không đổi được mật khẩu"); history.back();';
+        echo '</script>';
     }
 ?>
 <?php
