@@ -17,8 +17,9 @@
         //ktra co khop mk k
         if(password_verify($password_raw,$password_hash) && $level==true){
             $_SESSION['loginOK'] = $useremail;
+            $_SESSION['admin'] = $level;
             header('Location:admin/dashboard.php');
-        }if (password_verify($password_raw,$password_hash) && $level==false){
+        }else if (password_verify($password_raw,$password_hash) && $level==false){
             $_SESSION['loginOK'] = $useremail;
             header("Location:user/infor.php?username=$useremail"); 
         }
