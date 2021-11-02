@@ -1,4 +1,14 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['loginOK'])){
+        header("Location:../home.php"); 
+    }
+    if(!isset($_SESSION['admin'])){
+        echo '<script language="javascript">';
+        echo 'alert("Bạn không có quyền truy cập vào admin"); history.back();';
+        echo '</script>';
+        // header("Location:../home.php"); 
+    }
     include('header.php');
 ?>
 <div class="container-fluid">
