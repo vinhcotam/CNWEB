@@ -49,7 +49,7 @@
                                         $tt="Đã hủy đơn hàng";
                                     }
                                     echo '<td>'.$tt.'</td>';
-                                    echo '<td><a href="verify.php?id='.$row['receipt_id'].'" class="btn btn-primary">Xác nhận đơn hàng</a></td>';
+                                    echo '<td><a href="verify.php?id='.$row['receipt_id'].'&qty='.$row['quantity'].'&bookid='.$row['book_id'].'" class="btn btn-primary">Xác nhận đơn hàng</a></td>';
                                     echo '<td><a href="donereceipt.php?id='.$row['receipt_id'].'" class="btn btn-warning">Chuyển hàng thành công</a></td>';
                                     echo '<td><a href="delreceipt.php?id='.$row['receipt_id'].'" class="btn btn-danger">Hủy đơn hàng</a></td>';
                                     echo '</tr>';   
