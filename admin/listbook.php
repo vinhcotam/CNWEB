@@ -10,10 +10,10 @@
         // header("Location:../home.php"); 
     }
 include('header.php');
+$author='';
+$bookname='';
 if(isset($_GET['category'])){
-    $bookname='';
     $category=$_GET['category'];
-    $author='';
 }
 else {
     $category='default';
