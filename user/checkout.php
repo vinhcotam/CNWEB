@@ -13,6 +13,13 @@
 
 <body>
     <?php
+        session_start();
+        if(!isset($_SESSION['loginOK'])){
+            echo '<script language="javascript">';
+            echo 'alert("Bạn cần phải đăng nhập"); window.location.href = "../login.php"';
+            echo '</script>';
+            //header("Location:../login.php"); 
+        }
     include ("../conf.php");
     if(isset($_GET['id'])) 
     $book_id=$_GET['id'];
