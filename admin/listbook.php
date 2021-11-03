@@ -29,11 +29,11 @@ else {
         <div class="col-md-6">
             <form action="listbook.php" method="post">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="Ibookname" name="Ibookname" placeholder="Nhật ký trong tù">
+                    <input type="text" class="form-control" id="Ibookname" name="Ibookname" value = "<?php echo $bookname?>">
                     <label for="floatingInput">Tên sách</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="Ibookauthor" name = "Ibookauthor" placeholder="Nguyễn Ái Quốc">
+                    <input type="text" class="form-control" id="Ibookauthor" name = "Ibookauthor" value = "<?php echo $author?>">
                     <label for="floatingInput">Tên tác giả</label>
                 </div>
                 <div class="form-floating">
